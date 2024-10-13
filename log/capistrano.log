@@ -3731,3 +3731,875 @@ Caused by:
 /home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
  DEBUG [f04761eb] 	Tasks: TOP => db:migrate
  DEBUG [f04761eb] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2024-10-12 21:34:51 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [6ba9f651] Running /usr/bin/env which passenger as deploy@67.205.165.187
+ DEBUG [6ba9f651] Command: /usr/bin/env which passenger
+ DEBUG [6ba9f651] 	/usr/bin/passenger
+ DEBUG [6ba9f651] Finished in 1.385 seconds with exit status 0 (successful).
+ DEBUG [a1bf6094] Running [ -d ~/.rvm ] as deploy@67.205.165.187
+ DEBUG [a1bf6094] Command: [ -d ~/.rvm ]
+ DEBUG [a1bf6094] Finished in 0.125 seconds with exit status 0 (successful).
+ DEBUG [5376870d] Running ~/.rvm/bin/rvm version as deploy@67.205.165.187
+ DEBUG [5376870d] Command: ~/.rvm/bin/rvm version
+ DEBUG [5376870d] 	rvm 1.29.12 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [5376870d] Finished in 0.624 seconds with exit status 0 (successful).
+ DEBUG [a6ad2865] Running ~/.rvm/bin/rvm current as deploy@67.205.165.187
+ DEBUG [a6ad2865] Command: ~/.rvm/bin/rvm current
+ DEBUG [a6ad2865] 	ruby-2.7.1
+ DEBUG [a6ad2865] Finished in 0.613 seconds with exit status 0 (successful).
+ DEBUG [d76e6cdc] Running ~/.rvm/bin/rvm default do ruby --version as deploy@67.205.165.187
+ DEBUG [d76e6cdc] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [d76e6cdc] 	ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x86_64-linux]
+ DEBUG [d76e6cdc] Finished in 0.926 seconds with exit status 0 (successful).
+  INFO [8a400c66] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.165.187
+ DEBUG [8a400c66] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8a400c66] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-music-studio-api-production-brad.sh 0.0%
+  INFO Uploading /tmp/git-ssh-music-studio-api-production-brad.sh 100.0%
+  INFO [3c53974b] Running /usr/bin/env chmod 700 /tmp/git-ssh-music-studio-api-production-brad.sh as deploy@67.205.165.187
+ DEBUG [3c53974b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-music-studio-api-production-brad.sh
+  INFO [3c53974b] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [466ccba3] Running /usr/bin/env git ls-remote git@github.com:smithwebtek/music-studio-api.git HEAD as deploy@67.205.165.187
+ DEBUG [466ccba3] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git ls-remote git@github.com:smithwebtek/music-studio-api.git HEAD )
+ DEBUG [466ccba3] 	1d56820d7ad4887c2d80731eea0f88d1ff431b07	HEAD
+  INFO [466ccba3] Finished in 0.673 seconds with exit status 0 (successful).
+  INFO [c6a88b0e] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared /home/deploy/music-studio-api/releases as deploy@67.205.165.187
+ DEBUG [c6a88b0e] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared /home/deploy/music-studio-api/releases
+  INFO [c6a88b0e] Finished in 0.078 seconds with exit status 0 (successful).
+  INFO [24ed9495] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/shared/public/system as deploy@67.205.165.187
+ DEBUG [24ed9495] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/shared/public/system
+  INFO [24ed9495] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [80b8f467] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/config as deploy@67.205.165.187
+ DEBUG [80b8f467] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/config
+  INFO [80b8f467] Finished in 0.124 seconds with exit status 0 (successful).
+ DEBUG [1fe0980f] Running [ -f /home/deploy/music-studio-api/shared/config/database.yml ] as deploy@67.205.165.187
+ DEBUG [1fe0980f] Command: [ -f /home/deploy/music-studio-api/shared/config/database.yml ]
+ DEBUG [1fe0980f] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [f879c519] Running [ -f /home/deploy/music-studio-api/shared/config/master.key ] as deploy@67.205.165.187
+ DEBUG [f879c519] Command: [ -f /home/deploy/music-studio-api/shared/config/master.key ]
+ DEBUG [f879c519] Finished in 0.114 seconds with exit status 0 (successful).
+ DEBUG [da81d27c] Running [ -f /home/deploy/music-studio-api/shared/config/secrets.yml ] as deploy@67.205.165.187
+ DEBUG [da81d27c] Command: [ -f /home/deploy/music-studio-api/shared/config/secrets.yml ]
+ DEBUG [da81d27c] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [943bb4f1] Running [ -f /home/deploy/music-studio-api/current/REVISION ] as deploy@67.205.165.187
+ DEBUG [943bb4f1] Command: [ -f /home/deploy/music-studio-api/current/REVISION ]
+ DEBUG [943bb4f1] Finished in 0.112 seconds with exit status 1 (failed).
+ DEBUG [fc711807] Running [ -f /home/deploy/music-studio-api/repo/HEAD ] as deploy@67.205.165.187
+ DEBUG [fc711807] Command: [ -f /home/deploy/music-studio-api/repo/HEAD ]
+ DEBUG [fc711807] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/music-studio-api/repo
+ DEBUG [5f922948] Running if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [5f922948] Command: if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi
+ DEBUG [5f922948] Finished in 0.103 seconds with exit status 0 (successful).
+  INFO [76a3ea6b] Running /usr/bin/env git remote set-url origin git@github.com:smithwebtek/music-studio-api.git as deploy@67.205.165.187
+ DEBUG [76a3ea6b] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git remote set-url origin git@github.com:smithwebtek/music-studio-api.git )
+  INFO [76a3ea6b] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [330efa41] Running /usr/bin/env git remote update --prune as deploy@67.205.165.187
+ DEBUG [330efa41] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [330efa41] 	Fetching origin
+ DEBUG [330efa41] 	From github.com:smithwebtek/music-studio-api
+   bd80c42..1d56820  main       -> main
+  INFO [330efa41] Finished in 0.954 seconds with exit status 0 (successful).
+ DEBUG [644f9da3] Running if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [644f9da3] Command: if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi
+ DEBUG [644f9da3] Finished in 0.085 seconds with exit status 0 (successful).
+  INFO [19f5e91f] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013456 as deploy@67.205.165.187
+ DEBUG [19f5e91f] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013456 )
+  INFO [19f5e91f] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [fb23fab8] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/music-studio-api/releases/20241013013456 as deploy@67.205.165.187
+ DEBUG [fb23fab8] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/music-studio-api/releases/20241013013456 )
+  INFO [fb23fab8] Finished in 0.271 seconds with exit status 0 (successful).
+ DEBUG [abae6db9] Running if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [abae6db9] Command: if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi
+ DEBUG [abae6db9] Finished in 0.124 seconds with exit status 0 (successful).
+ DEBUG [2851c43c] Running /usr/bin/env git rev-list --max-count=1 main as deploy@67.205.165.187
+ DEBUG [2851c43c] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git rev-list --max-count=1 main )
+ DEBUG [2851c43c] 	1d56820d7ad4887c2d80731eea0f88d1ff431b07
+ DEBUG [2851c43c] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [2043e2d7] Running if test ! -d /home/deploy/music-studio-api/releases/20241013013456; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013456'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [2043e2d7] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013013456; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013456'" 1>&2; false; fi
+ DEBUG [2043e2d7] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [b9cfee7f] Running /usr/bin/env echo "1d56820d7ad4887c2d80731eea0f88d1ff431b07" >> REVISION as deploy@67.205.165.187
+ DEBUG [b9cfee7f] Command: cd /home/deploy/music-studio-api/releases/20241013013456 && /usr/bin/env echo "1d56820d7ad4887c2d80731eea0f88d1ff431b07" >> REVISION
+  INFO [b9cfee7f] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [b5fd4b13] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013456/config as deploy@67.205.165.187
+ DEBUG [b5fd4b13] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013456/config
+  INFO [b5fd4b13] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [9acec9bb] Running [ -L /home/deploy/music-studio-api/releases/20241013013456/config/database.yml ] as deploy@67.205.165.187
+ DEBUG [9acec9bb] Command: [ -L /home/deploy/music-studio-api/releases/20241013013456/config/database.yml ]
+ DEBUG [9acec9bb] Finished in 0.115 seconds with exit status 1 (failed).
+ DEBUG [3474d112] Running [ -f /home/deploy/music-studio-api/releases/20241013013456/config/database.yml ] as deploy@67.205.165.187
+ DEBUG [3474d112] Command: [ -f /home/deploy/music-studio-api/releases/20241013013456/config/database.yml ]
+ DEBUG [3474d112] Finished in 0.111 seconds with exit status 0 (successful).
+  INFO [06cb6cd9] Running /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013013456/config/database.yml as deploy@67.205.165.187
+ DEBUG [06cb6cd9] Command: /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013013456/config/database.yml
+  INFO [06cb6cd9] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [af5064ea] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/database.yml /home/deploy/music-studio-api/releases/20241013013456/config/database.yml as deploy@67.205.165.187
+ DEBUG [af5064ea] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/database.yml /home/deploy/music-studio-api/releases/20241013013456/config/database.yml
+  INFO [af5064ea] Finished in 0.115 seconds with exit status 0 (successful).
+ DEBUG [e56ada22] Running [ -L /home/deploy/music-studio-api/releases/20241013013456/config/master.key ] as deploy@67.205.165.187
+ DEBUG [e56ada22] Command: [ -L /home/deploy/music-studio-api/releases/20241013013456/config/master.key ]
+ DEBUG [e56ada22] Finished in 0.114 seconds with exit status 1 (failed).
+ DEBUG [eaeb2b55] Running [ -f /home/deploy/music-studio-api/releases/20241013013456/config/master.key ] as deploy@67.205.165.187
+ DEBUG [eaeb2b55] Command: [ -f /home/deploy/music-studio-api/releases/20241013013456/config/master.key ]
+ DEBUG [eaeb2b55] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [4e55cc73] Running /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013013456/config/master.key as deploy@67.205.165.187
+ DEBUG [4e55cc73] Command: /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013013456/config/master.key
+  INFO [4e55cc73] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [a0dc12a5] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/master.key /home/deploy/music-studio-api/releases/20241013013456/config/master.key as deploy@67.205.165.187
+ DEBUG [a0dc12a5] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/master.key /home/deploy/music-studio-api/releases/20241013013456/config/master.key
+  INFO [a0dc12a5] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG [0661a92a] Running [ -L /home/deploy/music-studio-api/releases/20241013013456/config/secrets.yml ] as deploy@67.205.165.187
+ DEBUG [0661a92a] Command: [ -L /home/deploy/music-studio-api/releases/20241013013456/config/secrets.yml ]
+ DEBUG [0661a92a] Finished in 0.119 seconds with exit status 1 (failed).
+ DEBUG [efa13624] Running [ -f /home/deploy/music-studio-api/releases/20241013013456/config/secrets.yml ] as deploy@67.205.165.187
+ DEBUG [efa13624] Command: [ -f /home/deploy/music-studio-api/releases/20241013013456/config/secrets.yml ]
+ DEBUG [efa13624] Finished in 0.107 seconds with exit status 1 (failed).
+  INFO [d96a4bcf] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/secrets.yml /home/deploy/music-studio-api/releases/20241013013456/config/secrets.yml as deploy@67.205.165.187
+ DEBUG [d96a4bcf] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/secrets.yml /home/deploy/music-studio-api/releases/20241013013456/config/secrets.yml
+  INFO [d96a4bcf] Finished in 0.111 seconds with exit status 0 (successful).
+  INFO [42ae2c9c] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013456 /home/deploy/music-studio-api/releases/20241013013456/tmp /home/deploy/music-studio-api/releases/20241013013456/public as deploy@67.205.165.187
+ DEBUG [42ae2c9c] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013456 /home/deploy/music-studio-api/releases/20241013013456/tmp /home/deploy/music-studio-api/releases/20241013013456/public
+  INFO [42ae2c9c] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [6ad750c5] Running [ -L /home/deploy/music-studio-api/releases/20241013013456/log ] as deploy@67.205.165.187
+ DEBUG [6ad750c5] Command: [ -L /home/deploy/music-studio-api/releases/20241013013456/log ]
+ DEBUG [6ad750c5] Finished in 0.122 seconds with exit status 1 (failed).
+ DEBUG [d975c4ca] Running [ -d /home/deploy/music-studio-api/releases/20241013013456/log ] as deploy@67.205.165.187
+ DEBUG [d975c4ca] Command: [ -d /home/deploy/music-studio-api/releases/20241013013456/log ]
+ DEBUG [d975c4ca] Finished in 0.108 seconds with exit status 0 (successful).
+  INFO [eec42964] Running /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013013456/log as deploy@67.205.165.187
+ DEBUG [eec42964] Command: /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013013456/log
+  INFO [eec42964] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [4fc456d8] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/releases/20241013013456/log as deploy@67.205.165.187
+ DEBUG [4fc456d8] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/releases/20241013013456/log
+  INFO [4fc456d8] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [b62fc7b4] Running [ -L /home/deploy/music-studio-api/releases/20241013013456/tmp/pids ] as deploy@67.205.165.187
+ DEBUG [b62fc7b4] Command: [ -L /home/deploy/music-studio-api/releases/20241013013456/tmp/pids ]
+ DEBUG [b62fc7b4] Finished in 0.109 seconds with exit status 1 (failed).
+ DEBUG [4beb602e] Running [ -d /home/deploy/music-studio-api/releases/20241013013456/tmp/pids ] as deploy@67.205.165.187
+ DEBUG [4beb602e] Command: [ -d /home/deploy/music-studio-api/releases/20241013013456/tmp/pids ]
+ DEBUG [4beb602e] Finished in 0.128 seconds with exit status 1 (failed).
+  INFO [2355170c] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/releases/20241013013456/tmp/pids as deploy@67.205.165.187
+ DEBUG [2355170c] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/releases/20241013013456/tmp/pids
+  INFO [2355170c] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [403a33d2] Running [ -L /home/deploy/music-studio-api/releases/20241013013456/tmp/cache ] as deploy@67.205.165.187
+ DEBUG [403a33d2] Command: [ -L /home/deploy/music-studio-api/releases/20241013013456/tmp/cache ]
+ DEBUG [403a33d2] Finished in 0.114 seconds with exit status 1 (failed).
+ DEBUG [08ec0dbc] Running [ -d /home/deploy/music-studio-api/releases/20241013013456/tmp/cache ] as deploy@67.205.165.187
+ DEBUG [08ec0dbc] Command: [ -d /home/deploy/music-studio-api/releases/20241013013456/tmp/cache ]
+ DEBUG [08ec0dbc] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [9be5ad2c] Running /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013013456/tmp/cache as deploy@67.205.165.187
+ DEBUG [9be5ad2c] Command: /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013013456/tmp/cache
+  INFO [9be5ad2c] Finished in 0.212 seconds with exit status 0 (successful).
+  INFO [2d32ab5e] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/releases/20241013013456/tmp/cache as deploy@67.205.165.187
+ DEBUG [2d32ab5e] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/releases/20241013013456/tmp/cache
+  INFO [2d32ab5e] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [b15b1d02] Running [ -L /home/deploy/music-studio-api/releases/20241013013456/tmp/sockets ] as deploy@67.205.165.187
+ DEBUG [b15b1d02] Command: [ -L /home/deploy/music-studio-api/releases/20241013013456/tmp/sockets ]
+ DEBUG [b15b1d02] Finished in 0.119 seconds with exit status 1 (failed).
+ DEBUG [52906689] Running [ -d /home/deploy/music-studio-api/releases/20241013013456/tmp/sockets ] as deploy@67.205.165.187
+ DEBUG [52906689] Command: [ -d /home/deploy/music-studio-api/releases/20241013013456/tmp/sockets ]
+ DEBUG [52906689] Finished in 0.161 seconds with exit status 1 (failed).
+  INFO [c255316a] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/releases/20241013013456/tmp/sockets as deploy@67.205.165.187
+ DEBUG [c255316a] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/releases/20241013013456/tmp/sockets
+  INFO [c255316a] Finished in 0.276 seconds with exit status 0 (successful).
+ DEBUG [1f26cba5] Running [ -L /home/deploy/music-studio-api/releases/20241013013456/public/system ] as deploy@67.205.165.187
+ DEBUG [1f26cba5] Command: [ -L /home/deploy/music-studio-api/releases/20241013013456/public/system ]
+ DEBUG [1f26cba5] Finished in 0.131 seconds with exit status 1 (failed).
+ DEBUG [fb2772f5] Running [ -d /home/deploy/music-studio-api/releases/20241013013456/public/system ] as deploy@67.205.165.187
+ DEBUG [fb2772f5] Command: [ -d /home/deploy/music-studio-api/releases/20241013013456/public/system ]
+ DEBUG [fb2772f5] Finished in 0.129 seconds with exit status 1 (failed).
+  INFO [417ae6d5] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/public/system /home/deploy/music-studio-api/releases/20241013013456/public/system as deploy@67.205.165.187
+ DEBUG [417ae6d5] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/public/system /home/deploy/music-studio-api/releases/20241013013456/public/system
+  INFO [417ae6d5] Finished in 0.342 seconds with exit status 0 (successful).
+ DEBUG [d5c20ede] Running if test ! -d /home/deploy/music-studio-api/releases/20241013013456; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013456'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [d5c20ede] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013013456; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013456'" 1>&2; false; fi
+ DEBUG [d5c20ede] Finished in 0.170 seconds with exit status 0 (successful).
+  INFO [05fc1dba] Running ~/.rvm/bin/rvm default do bundle config --local deployment true as deploy@67.205.165.187
+ DEBUG [05fc1dba] Command: cd /home/deploy/music-studio-api/releases/20241013013456 && ~/.rvm/bin/rvm default do bundle config --local deployment true
+  INFO [05fc1dba] Finished in 1.441 seconds with exit status 0 (successful).
+  INFO [57c1111b] Running ~/.rvm/bin/rvm default do bundle config --local path /home/deploy/music-studio-api/shared/bundle as deploy@67.205.165.187
+ DEBUG [57c1111b] Command: cd /home/deploy/music-studio-api/releases/20241013013456 && ~/.rvm/bin/rvm default do bundle config --local path /home/deploy/music-studio-api/shared/bundle
+  INFO [57c1111b] Finished in 1.424 seconds with exit status 0 (successful).
+  INFO [412d4ccc] Running ~/.rvm/bin/rvm default do bundle config --local without development:test as deploy@67.205.165.187
+ DEBUG [412d4ccc] Command: cd /home/deploy/music-studio-api/releases/20241013013456 && ~/.rvm/bin/rvm default do bundle config --local without development:test
+  INFO [412d4ccc] Finished in 1.328 seconds with exit status 0 (successful).
+ DEBUG [a46a024d] Running if test ! -d /home/deploy/music-studio-api/releases/20241013013456; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013456'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [a46a024d] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013013456; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013456'" 1>&2; false; fi
+ DEBUG [a46a024d] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [c21d6f65] Running ~/.rvm/bin/rvm default do bundle check as deploy@67.205.165.187
+ DEBUG [c21d6f65] Command: cd /home/deploy/music-studio-api/releases/20241013013456 && ~/.rvm/bin/rvm default do bundle check
+ DEBUG [c21d6f65] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.2.17). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.17`.
+ DEBUG [c21d6f65] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [c21d6f65] 	The Gemfile's dependencies are satisfied
+ DEBUG [c21d6f65] Finished in 1.435 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [fbf98784] Running if test ! -d /home/deploy/music-studio-api/releases/20241013013456; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013456'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [fbf98784] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013013456; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013456'" 1>&2; false; fi
+ DEBUG [fbf98784] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [af2af142] Running ~/.rvm/bin/rvm default do bundle exec rake db:migrate as deploy@67.205.165.187
+ DEBUG [af2af142] Command: cd /home/deploy/music-studio-api/releases/20241013013456 && ( export RAILS_ENV="production" ; ~/.rvm/bin/rvm default do bundle exec rake db:migrate )
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/type.rb:27: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/type/adapter_specific_registry.rb:9: warning: The called method `add_modifier' is defined here
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/integer.rb:13: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/oid/specialized_string.rb:12: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/schema_statements.rb:640: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_definitions.rb:263: warning: The called method `initialize' is defined here
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:301: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/schema_definitions.rb:46: warning: The called method `primary_key' is defined here
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_definitions.rb:366: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_definitions.rb:415: warning: The called method `new_column_definition' is defined here
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_creation.rb:19: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/schema_statements.rb:543: warning: The called method `type_to_sql' is defined here
+ DEBUG [af2af142] 	rake aborted!
+ DEBUG [af2af142] 	ActiveRecord::StatementInvalid: PG::DuplicateTable: ERROR:  relation "students" already exists
+: CREATE TABLE "students" ("id" bigserial primary key, "firstname" character varying, "lastname" character varying, "email" character varying, "level" integer, "teacher_id" integer, "active" boolean DEFAULT TRUE, "likes" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `exec'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `block (2 levels) in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:74:in `block in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:73:in `execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:311:in `create_table'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:871:in `block in method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `block in say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:860:in `method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:604:in `method_missing'
+/home/deploy/music-studio-api/releases/20241013013456/db/migrate/20241012040855_create_students.rb:2:in `<class:CreateStudents>'
+/home/deploy/music-studio-api/releases/20241013013456/db/migrate/20241012040855_create_students.rb:1:in `<main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:986:in `load_migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:982:in `migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:977:in `disable_ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1350:in `use_transaction?'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1297:in `rescue in execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1285:in `execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1263:in `block in migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `each'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `block in migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1363:in `with_advisory_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1036:in `up'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1011:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/tasks/database_tasks.rb:172:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/railties/databases.rake:60:in `block (2 levels) in <main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `eval'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
+ DEBUG [af2af142] 	
+Caused by:
+ DEBUG [af2af142] 	PG::DuplicateTable: ERROR:  relation "students" already exists
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `exec'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `block (2 levels) in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:74:in `block in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:73:in `execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:311:in `create_table'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:871:in `block in method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `block in say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:860:in `method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:604:in `method_missing'
+/home/deploy/music-studio-api/releases/20241013013456/db/migrate/20241012040855_create_students.rb:2:in `<class:CreateStudents>'
+/home/deploy/music-studio-api/releases/20241013013456/db/migrate/20241012040855_create_students.rb:1:in `<main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:986:in `load_migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:982:in `migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:977:in `disable_ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1350:in `use_transaction?'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1297:in `rescue in execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1285:in `execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1263:in `block in migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `each'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `block in migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1363:in `with_advisory_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1036:in `up'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1011:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/tasks/database_tasks.rb:172:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/railties/databases.rake:60:in `block (2 levels) in <main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `eval'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
+ DEBUG [af2af142] 	
+Caused by:
+ DEBUG [af2af142] 	ActiveRecord::StatementInvalid: PG::DuplicateTable: ERROR:  relation "students" already exists
+: CREATE TABLE "students" ("id" bigserial primary key, "firstname" character varying, "lastname" character varying, "email" character varying, "level" integer, "teacher_id" integer, "active" boolean DEFAULT TRUE, "likes" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `exec'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `block (2 levels) in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:74:in `block in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:73:in `execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:311:in `create_table'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:871:in `block in method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `block in say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:860:in `method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:604:in `method_missing'
+/home/deploy/music-studio-api/releases/20241013013456/db/migrate/20241012040855_create_students.rb:2:in `<class:CreateStudents>'
+/home/deploy/music-studio-api/releases/20241013013456/db/migrate/20241012040855_create_students.rb:1:in `<main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:986:in `load_migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:982:in `migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:977:in `disable_ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1350:in `use_transaction?'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1342:in `ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1291:in `execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1263:in `block in migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `each'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `block in migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1363:in `with_advisory_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1036:in `up'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1011:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/tasks/database_tasks.rb:172:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/railties/databases.rake:60:in `block (2 levels) in <main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `eval'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
+ DEBUG [af2af142] 	
+Caused by:
+ DEBUG [af2af142] 	PG::DuplicateTable: ERROR:  relation "students" already exists
+ DEBUG [af2af142] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `exec'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `block (2 levels) in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:74:in `block in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:73:in `execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:311:in `create_table'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:871:in `block in method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `block in say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:860:in `method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:604:in `method_missing'
+/home/deploy/music-studio-api/releases/20241013013456/db/migrate/20241012040855_create_students.rb:2:in `<class:CreateStudents>'
+/home/deploy/music-studio-api/releases/20241013013456/db/migrate/20241012040855_create_students.rb:1:in `<main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:986:in `load_migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:982:in `migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:977:in `disable_ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1350:in `use_transaction?'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1342:in `ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1291:in `execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1263:in `block in migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `each'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `block in migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1363:in `with_advisory_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1036:in `up'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1011:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/tasks/database_tasks.rb:172:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/railties/databases.rake:60:in `block (2 levels) in <main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `eval'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
+ DEBUG [af2af142] 	Tasks: TOP => db:migrate
+ DEBUG [af2af142] 	(See full trace by running task with --trace)
+ DEBUG [af2af142] 	-- create_table(:students)
+-- create_table(:students)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2024-10-12 21:36:51 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [7dbf4314] Running /usr/bin/env which passenger as deploy@67.205.165.187
+ DEBUG [7dbf4314] Command: /usr/bin/env which passenger
+ DEBUG [7dbf4314] 	/usr/bin/passenger
+ DEBUG [7dbf4314] Finished in 1.633 seconds with exit status 0 (successful).
+ DEBUG [bb622541] Running [ -d ~/.rvm ] as deploy@67.205.165.187
+ DEBUG [bb622541] Command: [ -d ~/.rvm ]
+ DEBUG [bb622541] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [05c7288a] Running ~/.rvm/bin/rvm version as deploy@67.205.165.187
+ DEBUG [05c7288a] Command: ~/.rvm/bin/rvm version
+ DEBUG [05c7288a] 	rvm 1.29.12 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [05c7288a] Finished in 0.658 seconds with exit status 0 (successful).
+ DEBUG [85f3abbf] Running ~/.rvm/bin/rvm current as deploy@67.205.165.187
+ DEBUG [85f3abbf] Command: ~/.rvm/bin/rvm current
+ DEBUG [85f3abbf] 	ruby-2.7.1
+ DEBUG [85f3abbf] Finished in 0.502 seconds with exit status 0 (successful).
+ DEBUG [435f064b] Running ~/.rvm/bin/rvm default do ruby --version as deploy@67.205.165.187
+ DEBUG [435f064b] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [435f064b] 	ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x86_64-linux]
+ DEBUG [435f064b] Finished in 0.819 seconds with exit status 0 (successful).
+  INFO [d3142004] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.165.187
+ DEBUG [d3142004] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d3142004] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-music-studio-api-production-brad.sh 0.0%
+  INFO Uploading /tmp/git-ssh-music-studio-api-production-brad.sh 100.0%
+  INFO [6ba20aad] Running /usr/bin/env chmod 700 /tmp/git-ssh-music-studio-api-production-brad.sh as deploy@67.205.165.187
+ DEBUG [6ba20aad] Command: /usr/bin/env chmod 700 /tmp/git-ssh-music-studio-api-production-brad.sh
+  INFO [6ba20aad] Finished in 0.122 seconds with exit status 0 (successful).
+  INFO [541dfeaa] Running /usr/bin/env git ls-remote git@github.com:smithwebtek/music-studio-api.git HEAD as deploy@67.205.165.187
+ DEBUG [541dfeaa] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git ls-remote git@github.com:smithwebtek/music-studio-api.git HEAD )
+ DEBUG [541dfeaa] 	Warning: the ECDSA host key for 'github.com' differs from the key for the IP address '140.82.113.3'
+Offending key for IP in /home/deploy/.ssh/known_hosts:1
+Matching host key in /home/deploy/.ssh/known_hosts:8
+ DEBUG [541dfeaa] 	1d56820d7ad4887c2d80731eea0f88d1ff431b07	HEAD
+  INFO [541dfeaa] Finished in 0.565 seconds with exit status 0 (successful).
+  INFO [99b03e19] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared /home/deploy/music-studio-api/releases as deploy@67.205.165.187
+ DEBUG [99b03e19] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared /home/deploy/music-studio-api/releases
+  INFO [99b03e19] Finished in 0.081 seconds with exit status 0 (successful).
+  INFO [6ec8505b] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/shared/public/system as deploy@67.205.165.187
+ DEBUG [6ec8505b] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/shared/public/system
+  INFO [6ec8505b] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [0bf2557a] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/config as deploy@67.205.165.187
+ DEBUG [0bf2557a] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/config
+  INFO [0bf2557a] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [d3abcfc3] Running [ -f /home/deploy/music-studio-api/shared/config/database.yml ] as deploy@67.205.165.187
+ DEBUG [d3abcfc3] Command: [ -f /home/deploy/music-studio-api/shared/config/database.yml ]
+ DEBUG [d3abcfc3] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [dda2f805] Running [ -f /home/deploy/music-studio-api/shared/config/master.key ] as deploy@67.205.165.187
+ DEBUG [dda2f805] Command: [ -f /home/deploy/music-studio-api/shared/config/master.key ]
+ DEBUG [dda2f805] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [e12abd64] Running [ -f /home/deploy/music-studio-api/shared/config/secrets.yml ] as deploy@67.205.165.187
+ DEBUG [e12abd64] Command: [ -f /home/deploy/music-studio-api/shared/config/secrets.yml ]
+ DEBUG [e12abd64] Finished in 0.129 seconds with exit status 0 (successful).
+ DEBUG [94ebe161] Running [ -f /home/deploy/music-studio-api/current/REVISION ] as deploy@67.205.165.187
+ DEBUG [94ebe161] Command: [ -f /home/deploy/music-studio-api/current/REVISION ]
+ DEBUG [94ebe161] Finished in 0.128 seconds with exit status 1 (failed).
+ DEBUG [04c36fe2] Running [ -f /home/deploy/music-studio-api/repo/HEAD ] as deploy@67.205.165.187
+ DEBUG [04c36fe2] Command: [ -f /home/deploy/music-studio-api/repo/HEAD ]
+ DEBUG [04c36fe2] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/music-studio-api/repo
+ DEBUG [ba3067e5] Running if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [ba3067e5] Command: if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi
+ DEBUG [ba3067e5] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [97b33337] Running /usr/bin/env git remote set-url origin git@github.com:smithwebtek/music-studio-api.git as deploy@67.205.165.187
+ DEBUG [97b33337] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git remote set-url origin git@github.com:smithwebtek/music-studio-api.git )
+  INFO [97b33337] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [5cc22f4c] Running /usr/bin/env git remote update --prune as deploy@67.205.165.187
+ DEBUG [5cc22f4c] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [5cc22f4c] 	Fetching origin
+ DEBUG [5cc22f4c] 	Warning: the ECDSA host key for 'github.com' differs from the key for the IP address '140.82.113.3'
+Offending key for IP in /home/deploy/.ssh/known_hosts:1
+Matching host key in /home/deploy/.ssh/known_hosts:8
+  INFO [5cc22f4c] Finished in 0.878 seconds with exit status 0 (successful).
+ DEBUG [f63d0008] Running if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [f63d0008] Command: if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi
+ DEBUG [f63d0008] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO [dbb89c54] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013656 as deploy@67.205.165.187
+ DEBUG [dbb89c54] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013656 )
+  INFO [dbb89c54] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO [8bd8611e] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/music-studio-api/releases/20241013013656 as deploy@67.205.165.187
+ DEBUG [8bd8611e] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/music-studio-api/releases/20241013013656 )
+  INFO [8bd8611e] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [550b84d5] Running if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [550b84d5] Command: if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi
+ DEBUG [550b84d5] Finished in 0.105 seconds with exit status 0 (successful).
+ DEBUG [7cd32a3e] Running /usr/bin/env git rev-list --max-count=1 main as deploy@67.205.165.187
+ DEBUG [7cd32a3e] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git rev-list --max-count=1 main )
+ DEBUG [7cd32a3e] 	1d56820d7ad4887c2d80731eea0f88d1ff431b07
+ DEBUG [7cd32a3e] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [e016190f] Running if test ! -d /home/deploy/music-studio-api/releases/20241013013656; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013656'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [e016190f] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013013656; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013656'" 1>&2; false; fi
+ DEBUG [e016190f] Finished in 0.111 seconds with exit status 0 (successful).
+  INFO [70751bb5] Running /usr/bin/env echo "1d56820d7ad4887c2d80731eea0f88d1ff431b07" >> REVISION as deploy@67.205.165.187
+ DEBUG [70751bb5] Command: cd /home/deploy/music-studio-api/releases/20241013013656 && /usr/bin/env echo "1d56820d7ad4887c2d80731eea0f88d1ff431b07" >> REVISION
+  INFO [70751bb5] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [e6b61fc0] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013656/config as deploy@67.205.165.187
+ DEBUG [e6b61fc0] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013656/config
+  INFO [e6b61fc0] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [548f7c05] Running [ -L /home/deploy/music-studio-api/releases/20241013013656/config/database.yml ] as deploy@67.205.165.187
+ DEBUG [548f7c05] Command: [ -L /home/deploy/music-studio-api/releases/20241013013656/config/database.yml ]
+ DEBUG [548f7c05] Finished in 0.109 seconds with exit status 1 (failed).
+ DEBUG [190563b5] Running [ -f /home/deploy/music-studio-api/releases/20241013013656/config/database.yml ] as deploy@67.205.165.187
+ DEBUG [190563b5] Command: [ -f /home/deploy/music-studio-api/releases/20241013013656/config/database.yml ]
+ DEBUG [190563b5] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [735562f6] Running /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013013656/config/database.yml as deploy@67.205.165.187
+ DEBUG [735562f6] Command: /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013013656/config/database.yml
+  INFO [735562f6] Finished in 0.137 seconds with exit status 0 (successful).
+  INFO [6d679a03] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/database.yml /home/deploy/music-studio-api/releases/20241013013656/config/database.yml as deploy@67.205.165.187
+ DEBUG [6d679a03] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/database.yml /home/deploy/music-studio-api/releases/20241013013656/config/database.yml
+  INFO [6d679a03] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [7ec2c6ed] Running [ -L /home/deploy/music-studio-api/releases/20241013013656/config/master.key ] as deploy@67.205.165.187
+ DEBUG [7ec2c6ed] Command: [ -L /home/deploy/music-studio-api/releases/20241013013656/config/master.key ]
+ DEBUG [7ec2c6ed] Finished in 0.114 seconds with exit status 1 (failed).
+ DEBUG [76fe3a93] Running [ -f /home/deploy/music-studio-api/releases/20241013013656/config/master.key ] as deploy@67.205.165.187
+ DEBUG [76fe3a93] Command: [ -f /home/deploy/music-studio-api/releases/20241013013656/config/master.key ]
+ DEBUG [76fe3a93] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [2492eeda] Running /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013013656/config/master.key as deploy@67.205.165.187
+ DEBUG [2492eeda] Command: /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013013656/config/master.key
+  INFO [2492eeda] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [15982147] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/master.key /home/deploy/music-studio-api/releases/20241013013656/config/master.key as deploy@67.205.165.187
+ DEBUG [15982147] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/master.key /home/deploy/music-studio-api/releases/20241013013656/config/master.key
+  INFO [15982147] Finished in 0.110 seconds with exit status 0 (successful).
+ DEBUG [2b31091d] Running [ -L /home/deploy/music-studio-api/releases/20241013013656/config/secrets.yml ] as deploy@67.205.165.187
+ DEBUG [2b31091d] Command: [ -L /home/deploy/music-studio-api/releases/20241013013656/config/secrets.yml ]
+ DEBUG [2b31091d] Finished in 0.109 seconds with exit status 1 (failed).
+ DEBUG [b2614f1b] Running [ -f /home/deploy/music-studio-api/releases/20241013013656/config/secrets.yml ] as deploy@67.205.165.187
+ DEBUG [b2614f1b] Command: [ -f /home/deploy/music-studio-api/releases/20241013013656/config/secrets.yml ]
+ DEBUG [b2614f1b] Finished in 0.117 seconds with exit status 1 (failed).
+  INFO [41223049] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/secrets.yml /home/deploy/music-studio-api/releases/20241013013656/config/secrets.yml as deploy@67.205.165.187
+ DEBUG [41223049] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/secrets.yml /home/deploy/music-studio-api/releases/20241013013656/config/secrets.yml
+  INFO [41223049] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [ecf1dfac] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013656 /home/deploy/music-studio-api/releases/20241013013656/tmp /home/deploy/music-studio-api/releases/20241013013656/public as deploy@67.205.165.187
+ DEBUG [ecf1dfac] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013013656 /home/deploy/music-studio-api/releases/20241013013656/tmp /home/deploy/music-studio-api/releases/20241013013656/public
+  INFO [ecf1dfac] Finished in 0.121 seconds with exit status 0 (successful).
+ DEBUG [3e8e1cd3] Running [ -L /home/deploy/music-studio-api/releases/20241013013656/log ] as deploy@67.205.165.187
+ DEBUG [3e8e1cd3] Command: [ -L /home/deploy/music-studio-api/releases/20241013013656/log ]
+ DEBUG [3e8e1cd3] Finished in 0.138 seconds with exit status 1 (failed).
+ DEBUG [32ab73f0] Running [ -d /home/deploy/music-studio-api/releases/20241013013656/log ] as deploy@67.205.165.187
+ DEBUG [32ab73f0] Command: [ -d /home/deploy/music-studio-api/releases/20241013013656/log ]
+ DEBUG [32ab73f0] Finished in 0.141 seconds with exit status 0 (successful).
+  INFO [c9091ef3] Running /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013013656/log as deploy@67.205.165.187
+ DEBUG [c9091ef3] Command: /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013013656/log
+  INFO [c9091ef3] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [2ffd5504] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/releases/20241013013656/log as deploy@67.205.165.187
+ DEBUG [2ffd5504] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/releases/20241013013656/log
+  INFO [2ffd5504] Finished in 0.130 seconds with exit status 0 (successful).
+ DEBUG [7b577fe8] Running [ -L /home/deploy/music-studio-api/releases/20241013013656/tmp/pids ] as deploy@67.205.165.187
+ DEBUG [7b577fe8] Command: [ -L /home/deploy/music-studio-api/releases/20241013013656/tmp/pids ]
+ DEBUG [7b577fe8] Finished in 0.108 seconds with exit status 1 (failed).
+ DEBUG [102ceb25] Running [ -d /home/deploy/music-studio-api/releases/20241013013656/tmp/pids ] as deploy@67.205.165.187
+ DEBUG [102ceb25] Command: [ -d /home/deploy/music-studio-api/releases/20241013013656/tmp/pids ]
+ DEBUG [102ceb25] Finished in 0.111 seconds with exit status 1 (failed).
+  INFO [bba0598e] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/releases/20241013013656/tmp/pids as deploy@67.205.165.187
+ DEBUG [bba0598e] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/releases/20241013013656/tmp/pids
+  INFO [bba0598e] Finished in 0.108 seconds with exit status 0 (successful).
+ DEBUG [02944cc5] Running [ -L /home/deploy/music-studio-api/releases/20241013013656/tmp/cache ] as deploy@67.205.165.187
+ DEBUG [02944cc5] Command: [ -L /home/deploy/music-studio-api/releases/20241013013656/tmp/cache ]
+ DEBUG [02944cc5] Finished in 0.108 seconds with exit status 1 (failed).
+ DEBUG [2ee6b18e] Running [ -d /home/deploy/music-studio-api/releases/20241013013656/tmp/cache ] as deploy@67.205.165.187
+ DEBUG [2ee6b18e] Command: [ -d /home/deploy/music-studio-api/releases/20241013013656/tmp/cache ]
+ DEBUG [2ee6b18e] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [4451e273] Running /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013013656/tmp/cache as deploy@67.205.165.187
+ DEBUG [4451e273] Command: /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013013656/tmp/cache
+  INFO [4451e273] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [908c8ec4] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/releases/20241013013656/tmp/cache as deploy@67.205.165.187
+ DEBUG [908c8ec4] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/releases/20241013013656/tmp/cache
+  INFO [908c8ec4] Finished in 0.138 seconds with exit status 0 (successful).
+ DEBUG [451be37d] Running [ -L /home/deploy/music-studio-api/releases/20241013013656/tmp/sockets ] as deploy@67.205.165.187
+ DEBUG [451be37d] Command: [ -L /home/deploy/music-studio-api/releases/20241013013656/tmp/sockets ]
+ DEBUG [451be37d] Finished in 0.113 seconds with exit status 1 (failed).
+ DEBUG [00f28b9d] Running [ -d /home/deploy/music-studio-api/releases/20241013013656/tmp/sockets ] as deploy@67.205.165.187
+ DEBUG [00f28b9d] Command: [ -d /home/deploy/music-studio-api/releases/20241013013656/tmp/sockets ]
+ DEBUG [00f28b9d] Finished in 0.119 seconds with exit status 1 (failed).
+  INFO [7f06371e] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/releases/20241013013656/tmp/sockets as deploy@67.205.165.187
+ DEBUG [7f06371e] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/releases/20241013013656/tmp/sockets
+  INFO [7f06371e] Finished in 0.110 seconds with exit status 0 (successful).
+ DEBUG [64fe5086] Running [ -L /home/deploy/music-studio-api/releases/20241013013656/public/system ] as deploy@67.205.165.187
+ DEBUG [64fe5086] Command: [ -L /home/deploy/music-studio-api/releases/20241013013656/public/system ]
+ DEBUG [64fe5086] Finished in 0.111 seconds with exit status 1 (failed).
+ DEBUG [eda060e2] Running [ -d /home/deploy/music-studio-api/releases/20241013013656/public/system ] as deploy@67.205.165.187
+ DEBUG [eda060e2] Command: [ -d /home/deploy/music-studio-api/releases/20241013013656/public/system ]
+ DEBUG [eda060e2] Finished in 0.113 seconds with exit status 1 (failed).
+  INFO [e092d58e] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/public/system /home/deploy/music-studio-api/releases/20241013013656/public/system as deploy@67.205.165.187
+ DEBUG [e092d58e] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/public/system /home/deploy/music-studio-api/releases/20241013013656/public/system
+  INFO [e092d58e] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [ddabaf08] Running if test ! -d /home/deploy/music-studio-api/releases/20241013013656; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013656'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [ddabaf08] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013013656; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013656'" 1>&2; false; fi
+ DEBUG [ddabaf08] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO [6838b77c] Running ~/.rvm/bin/rvm default do bundle config --local deployment true as deploy@67.205.165.187
+ DEBUG [6838b77c] Command: cd /home/deploy/music-studio-api/releases/20241013013656 && ~/.rvm/bin/rvm default do bundle config --local deployment true
+  INFO [6838b77c] Finished in 1.192 seconds with exit status 0 (successful).
+  INFO [7d82528f] Running ~/.rvm/bin/rvm default do bundle config --local path /home/deploy/music-studio-api/shared/bundle as deploy@67.205.165.187
+ DEBUG [7d82528f] Command: cd /home/deploy/music-studio-api/releases/20241013013656 && ~/.rvm/bin/rvm default do bundle config --local path /home/deploy/music-studio-api/shared/bundle
+  INFO [7d82528f] Finished in 1.280 seconds with exit status 0 (successful).
+  INFO [a1db04af] Running ~/.rvm/bin/rvm default do bundle config --local without development:test as deploy@67.205.165.187
+ DEBUG [a1db04af] Command: cd /home/deploy/music-studio-api/releases/20241013013656 && ~/.rvm/bin/rvm default do bundle config --local without development:test
+  INFO [a1db04af] Finished in 1.327 seconds with exit status 0 (successful).
+ DEBUG [916a5f34] Running if test ! -d /home/deploy/music-studio-api/releases/20241013013656; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013656'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [916a5f34] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013013656; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013656'" 1>&2; false; fi
+ DEBUG [916a5f34] Finished in 0.115 seconds with exit status 0 (successful).
+ DEBUG [92555326] Running ~/.rvm/bin/rvm default do bundle check as deploy@67.205.165.187
+ DEBUG [92555326] Command: cd /home/deploy/music-studio-api/releases/20241013013656 && ~/.rvm/bin/rvm default do bundle check
+ DEBUG [92555326] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.2.17). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.17`.
+ DEBUG [92555326] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [92555326] 	The Gemfile's dependencies are satisfied
+ DEBUG [92555326] Finished in 1.363 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [452331e0] Running if test ! -d /home/deploy/music-studio-api/releases/20241013013656; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013656'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [452331e0] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013013656; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013013656'" 1>&2; false; fi
+ DEBUG [452331e0] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [caab7e5c] Running ~/.rvm/bin/rvm default do bundle exec rake db:migrate as deploy@67.205.165.187
+ DEBUG [caab7e5c] Command: cd /home/deploy/music-studio-api/releases/20241013013656 && ( export RAILS_ENV="production" ; ~/.rvm/bin/rvm default do bundle exec rake db:migrate )
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/type.rb:27: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/type/adapter_specific_registry.rb:9: warning: The called method `add_modifier' is defined here
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/integer.rb:13: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/oid/specialized_string.rb:12: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/schema_statements.rb:640: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_definitions.rb:263: warning: The called method `initialize' is defined here
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:301: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/schema_definitions.rb:46: warning: The called method `primary_key' is defined here
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_definitions.rb:366: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_definitions.rb:415: warning: The called method `new_column_definition' is defined here
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_creation.rb:19: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/schema_statements.rb:543: warning: The called method `type_to_sql' is defined here
+ DEBUG [caab7e5c] 	rake aborted!
+ActiveRecord::StatementInvalid: PG::DuplicateTable: ERROR:  relation "students" already exists
+: CREATE TABLE "students" ("id" bigserial primary key, "firstname" character varying, "lastname" character varying, "email" character varying, "level" integer, "teacher_id" integer, "active" boolean DEFAULT TRUE, "likes" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `exec'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `block (2 levels) in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:74:in `block in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:73:in `execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:311:in `create_table'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:871:in `block in method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `block in say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:860:in `method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:604:in `method_missing'
+/home/deploy/music-studio-api/releases/20241013013656/db/migrate/20241012040855_create_students.rb:2:in `<class:CreateStudents>'
+/home/deploy/music-studio-api/releases/20241013013656/db/migrate/20241012040855_create_students.rb:1:in `<main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:986:in `load_migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:982:in `migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:977:in `disable_ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1350:in `use_transaction?'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1297:in `rescue in execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1285:in `execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1263:in `block in migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `each'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `block in migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1363:in `with_advisory_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1036:in `up'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1011:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/tasks/database_tasks.rb:172:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/railties/databases.rake:60:in `block (2 levels) in <main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `eval'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
+
+Caused by:
+ DEBUG [caab7e5c] 	PG::DuplicateTable: ERROR:  relation "students" already exists
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `exec'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `block (2 levels) in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:74:in `block in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:73:in `execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:311:in `create_table'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:871:in `block in method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `block in say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:860:in `method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:604:in `method_missing'
+/home/deploy/music-studio-api/releases/20241013013656/db/migrate/20241012040855_create_students.rb:2:in `<class:CreateStudents>'
+/home/deploy/music-studio-api/releases/20241013013656/db/migrate/20241012040855_create_students.rb:1:in `<main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:986:in `load_migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:982:in `migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:977:in `disable_ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1350:in `use_transaction?'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1297:in `rescue in execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1285:in `execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1263:in `block in migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `each'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `block in migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1363:in `with_advisory_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1036:in `up'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1011:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/tasks/database_tasks.rb:172:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/railties/databases.rake:60:in `block (2 levels) in <main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `eval'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
+
+Caused by:
+ActiveRecord::StatementInvalid: PG::DuplicateTable: ERROR:  relation "students" already exists
+: CREATE TABLE "students" ("id" bigserial primary key, "firstname" character varying, "lastname" character varying, "email" character varying, "level" integer, "teacher_id" integer, "active" boolean DEFAULT TRUE, "likes" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `exec'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `block (2 levels) in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:74:in `block in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:73:in `execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:311:in `create_table'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:871:in `block in method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `block in say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:860:in `method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:604:in `method_missing'
+/home/deploy/music-studio-api/releases/20241013013656/db/migrate/20241012040855_create_students.rb:2:in `<class:CreateStudents>'
+/home/deploy/music-studio-api/releases/20241013013656/db/migrate/20241012040855_create_students.rb:1:in `<main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:986:in `load_migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:982:in `migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:977:in `disable_ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1350:in `use_transaction?'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1342:in `ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1291:in `execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1263:in `block in migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `each'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `block in migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1363:in `with_advisory_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1036:in `up'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1011:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/tasks/database_tasks.rb:172:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/railties/databases.rake:60:in `block (2 levels) in <main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `eval'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
+
+Caused by:
+PG::DuplicateTable: ERROR:  relation "students" already exists
+ DEBUG [caab7e5c] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `exec'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `block (2 levels) in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:74:in `block in execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/database_statements.rb:73:in `execute'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:311:in `create_table'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:871:in `block in method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `block in say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:840:in `say_with_time'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:860:in `method_missing'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:604:in `method_missing'
+/home/deploy/music-studio-api/releases/20241013013656/db/migrate/20241012040855_create_students.rb:2:in `<class:CreateStudents>'
+/home/deploy/music-studio-api/releases/20241013013656/db/migrate/20241012040855_create_students.rb:1:in `<main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:986:in `load_migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:982:in `migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:977:in `disable_ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1350:in `use_transaction?'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1342:in `ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1291:in `execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1263:in `block in migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `each'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `block in migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1363:in `with_advisory_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1036:in `up'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1011:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/tasks/database_tasks.rb:172:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/railties/databases.rake:60:in `block (2 levels) in <main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `eval'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
+ DEBUG [caab7e5c] 	Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+ DEBUG [caab7e5c] 	-- create_table(:students)
+-- create_table(:students)
