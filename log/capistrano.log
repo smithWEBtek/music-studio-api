@@ -3447,3 +3447,287 @@ Caused by:
 /home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
  DEBUG [9fb2a283] 	Tasks: TOP => db:migrate
  DEBUG [9fb2a283] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2024-10-12 21:27:57 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [e4e606fb] Running /usr/bin/env which passenger as deploy@67.205.165.187
+ DEBUG [e4e606fb] Command: /usr/bin/env which passenger
+ DEBUG [e4e606fb] 	/usr/bin/passenger
+ DEBUG [e4e606fb] Finished in 1.389 seconds with exit status 0 (successful).
+ DEBUG [61201d1b] Running [ -d ~/.rvm ] as deploy@67.205.165.187
+ DEBUG [61201d1b] Command: [ -d ~/.rvm ]
+ DEBUG [61201d1b] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [3052632c] Running ~/.rvm/bin/rvm version as deploy@67.205.165.187
+ DEBUG [3052632c] Command: ~/.rvm/bin/rvm version
+ DEBUG [3052632c] 	rvm 1.29.12 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [3052632c] Finished in 0.648 seconds with exit status 0 (successful).
+ DEBUG [a2e05058] Running ~/.rvm/bin/rvm current as deploy@67.205.165.187
+ DEBUG [a2e05058] Command: ~/.rvm/bin/rvm current
+ DEBUG [a2e05058] 	ruby-2.7.1
+ DEBUG [a2e05058] Finished in 0.615 seconds with exit status 0 (successful).
+ DEBUG [94a07244] Running ~/.rvm/bin/rvm default do ruby --version as deploy@67.205.165.187
+ DEBUG [94a07244] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [94a07244] 	ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x86_64-linux]
+ DEBUG [94a07244] Finished in 0.919 seconds with exit status 0 (successful).
+  INFO [605b0d83] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.165.187
+ DEBUG [605b0d83] Command: /usr/bin/env mkdir -p /tmp
+  INFO [605b0d83] Finished in 0.110 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-music-studio-api-production-brad.sh 0.0%
+  INFO Uploading /tmp/git-ssh-music-studio-api-production-brad.sh 100.0%
+  INFO [f92e9ea7] Running /usr/bin/env chmod 700 /tmp/git-ssh-music-studio-api-production-brad.sh as deploy@67.205.165.187
+ DEBUG [f92e9ea7] Command: /usr/bin/env chmod 700 /tmp/git-ssh-music-studio-api-production-brad.sh
+  INFO [f92e9ea7] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [7ea91c91] Running /usr/bin/env git ls-remote git@github.com:smithwebtek/music-studio-api.git HEAD as deploy@67.205.165.187
+ DEBUG [7ea91c91] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git ls-remote git@github.com:smithwebtek/music-studio-api.git HEAD )
+ DEBUG [7ea91c91] 	Warning: the ECDSA host key for 'github.com' differs from the key for the IP address '140.82.114.4'
+Offending key for IP in /home/deploy/.ssh/known_hosts:7
+Matching host key in /home/deploy/.ssh/known_hosts:8
+ DEBUG [7ea91c91] 	bd80c421c82205d969da3e6515b55522b25589a6	HEAD
+  INFO [7ea91c91] Finished in 0.643 seconds with exit status 0 (successful).
+  INFO [39966148] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared /home/deploy/music-studio-api/releases as deploy@67.205.165.187
+ DEBUG [39966148] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared /home/deploy/music-studio-api/releases
+  INFO [39966148] Finished in 0.089 seconds with exit status 0 (successful).
+  INFO [935733d7] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/shared/public/system as deploy@67.205.165.187
+ DEBUG [935733d7] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/shared/public/system
+  INFO [935733d7] Finished in 0.137 seconds with exit status 0 (successful).
+  INFO [164497ea] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/config as deploy@67.205.165.187
+ DEBUG [164497ea] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/shared/config
+  INFO [164497ea] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [3eb5498d] Running [ -f /home/deploy/music-studio-api/shared/config/database.yml ] as deploy@67.205.165.187
+ DEBUG [3eb5498d] Command: [ -f /home/deploy/music-studio-api/shared/config/database.yml ]
+ DEBUG [3eb5498d] Finished in 0.125 seconds with exit status 0 (successful).
+ DEBUG [7be54fc1] Running [ -f /home/deploy/music-studio-api/shared/config/master.key ] as deploy@67.205.165.187
+ DEBUG [7be54fc1] Command: [ -f /home/deploy/music-studio-api/shared/config/master.key ]
+ DEBUG [7be54fc1] Finished in 0.114 seconds with exit status 0 (successful).
+ DEBUG [f81b4319] Running [ -f /home/deploy/music-studio-api/shared/config/secrets.yml ] as deploy@67.205.165.187
+ DEBUG [f81b4319] Command: [ -f /home/deploy/music-studio-api/shared/config/secrets.yml ]
+ DEBUG [f81b4319] Finished in 0.122 seconds with exit status 0 (successful).
+ DEBUG [2d63c074] Running [ -f /home/deploy/music-studio-api/current/REVISION ] as deploy@67.205.165.187
+ DEBUG [2d63c074] Command: [ -f /home/deploy/music-studio-api/current/REVISION ]
+ DEBUG [2d63c074] Finished in 0.132 seconds with exit status 1 (failed).
+ DEBUG [625f6b11] Running [ -f /home/deploy/music-studio-api/repo/HEAD ] as deploy@67.205.165.187
+ DEBUG [625f6b11] Command: [ -f /home/deploy/music-studio-api/repo/HEAD ]
+ DEBUG [625f6b11] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/music-studio-api/repo
+ DEBUG [1b356425] Running if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [1b356425] Command: if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi
+ DEBUG [1b356425] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [991f8c83] Running /usr/bin/env git remote set-url origin git@github.com:smithwebtek/music-studio-api.git as deploy@67.205.165.187
+ DEBUG [991f8c83] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git remote set-url origin git@github.com:smithwebtek/music-studio-api.git )
+  INFO [991f8c83] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [3846c966] Running /usr/bin/env git remote update --prune as deploy@67.205.165.187
+ DEBUG [3846c966] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [3846c966] 	Fetching origin
+ DEBUG [3846c966] 	Warning: the ECDSA host key for 'github.com' differs from the key for the IP address '140.82.114.4'
+Offending key for IP in /home/deploy/.ssh/known_hosts:7
+Matching host key in /home/deploy/.ssh/known_hosts:8
+ DEBUG [3846c966] 	From github.com:smithwebtek/music-studio-api
+   a02eb2a..bd80c42  main       -> main
+  INFO [3846c966] Finished in 0.833 seconds with exit status 0 (successful).
+ DEBUG [bf1775a8] Running if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [bf1775a8] Command: if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi
+ DEBUG [bf1775a8] Finished in 0.075 seconds with exit status 0 (successful).
+  INFO [f0acac89] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013012803 as deploy@67.205.165.187
+ DEBUG [f0acac89] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013012803 )
+  INFO [f0acac89] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [d656a6bf] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/music-studio-api/releases/20241013012803 as deploy@67.205.165.187
+ DEBUG [d656a6bf] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/music-studio-api/releases/20241013012803 )
+  INFO [d656a6bf] Finished in 0.249 seconds with exit status 0 (successful).
+ DEBUG [c2d517e0] Running if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [c2d517e0] Command: if test ! -d /home/deploy/music-studio-api/repo; then echo "Directory does not exist '/home/deploy/music-studio-api/repo'" 1>&2; false; fi
+ DEBUG [c2d517e0] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [5accba28] Running /usr/bin/env git rev-list --max-count=1 main as deploy@67.205.165.187
+ DEBUG [5accba28] Command: cd /home/deploy/music-studio-api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-music-studio-api-production-brad.sh" ; /usr/bin/env git rev-list --max-count=1 main )
+ DEBUG [5accba28] 	bd80c421c82205d969da3e6515b55522b25589a6
+ DEBUG [5accba28] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [392f532a] Running if test ! -d /home/deploy/music-studio-api/releases/20241013012803; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013012803'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [392f532a] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013012803; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013012803'" 1>&2; false; fi
+ DEBUG [392f532a] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [cb96e6f3] Running /usr/bin/env echo "bd80c421c82205d969da3e6515b55522b25589a6" >> REVISION as deploy@67.205.165.187
+ DEBUG [cb96e6f3] Command: cd /home/deploy/music-studio-api/releases/20241013012803 && /usr/bin/env echo "bd80c421c82205d969da3e6515b55522b25589a6" >> REVISION
+  INFO [cb96e6f3] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [5731ff38] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013012803/config as deploy@67.205.165.187
+ DEBUG [5731ff38] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013012803/config
+  INFO [5731ff38] Finished in 0.110 seconds with exit status 0 (successful).
+ DEBUG [74e63eb4] Running [ -L /home/deploy/music-studio-api/releases/20241013012803/config/database.yml ] as deploy@67.205.165.187
+ DEBUG [74e63eb4] Command: [ -L /home/deploy/music-studio-api/releases/20241013012803/config/database.yml ]
+ DEBUG [74e63eb4] Finished in 0.140 seconds with exit status 1 (failed).
+ DEBUG [d8947329] Running [ -f /home/deploy/music-studio-api/releases/20241013012803/config/database.yml ] as deploy@67.205.165.187
+ DEBUG [d8947329] Command: [ -f /home/deploy/music-studio-api/releases/20241013012803/config/database.yml ]
+ DEBUG [d8947329] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [7e2e4101] Running /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013012803/config/database.yml as deploy@67.205.165.187
+ DEBUG [7e2e4101] Command: /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013012803/config/database.yml
+  INFO [7e2e4101] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [68fb4e95] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/database.yml /home/deploy/music-studio-api/releases/20241013012803/config/database.yml as deploy@67.205.165.187
+ DEBUG [68fb4e95] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/database.yml /home/deploy/music-studio-api/releases/20241013012803/config/database.yml
+  INFO [68fb4e95] Finished in 0.146 seconds with exit status 0 (successful).
+ DEBUG [3bb29d70] Running [ -L /home/deploy/music-studio-api/releases/20241013012803/config/master.key ] as deploy@67.205.165.187
+ DEBUG [3bb29d70] Command: [ -L /home/deploy/music-studio-api/releases/20241013012803/config/master.key ]
+ DEBUG [3bb29d70] Finished in 0.114 seconds with exit status 1 (failed).
+ DEBUG [080f8c1a] Running [ -f /home/deploy/music-studio-api/releases/20241013012803/config/master.key ] as deploy@67.205.165.187
+ DEBUG [080f8c1a] Command: [ -f /home/deploy/music-studio-api/releases/20241013012803/config/master.key ]
+ DEBUG [080f8c1a] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [b7eabf59] Running /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013012803/config/master.key as deploy@67.205.165.187
+ DEBUG [b7eabf59] Command: /usr/bin/env rm /home/deploy/music-studio-api/releases/20241013012803/config/master.key
+  INFO [b7eabf59] Finished in 0.127 seconds with exit status 0 (successful).
+  INFO [626a2fe4] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/master.key /home/deploy/music-studio-api/releases/20241013012803/config/master.key as deploy@67.205.165.187
+ DEBUG [626a2fe4] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/master.key /home/deploy/music-studio-api/releases/20241013012803/config/master.key
+  INFO [626a2fe4] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [e82272c0] Running [ -L /home/deploy/music-studio-api/releases/20241013012803/config/secrets.yml ] as deploy@67.205.165.187
+ DEBUG [e82272c0] Command: [ -L /home/deploy/music-studio-api/releases/20241013012803/config/secrets.yml ]
+ DEBUG [e82272c0] Finished in 0.106 seconds with exit status 1 (failed).
+ DEBUG [2788ea65] Running [ -f /home/deploy/music-studio-api/releases/20241013012803/config/secrets.yml ] as deploy@67.205.165.187
+ DEBUG [2788ea65] Command: [ -f /home/deploy/music-studio-api/releases/20241013012803/config/secrets.yml ]
+ DEBUG [2788ea65] Finished in 0.109 seconds with exit status 1 (failed).
+  INFO [c1051a57] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/secrets.yml /home/deploy/music-studio-api/releases/20241013012803/config/secrets.yml as deploy@67.205.165.187
+ DEBUG [c1051a57] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/config/secrets.yml /home/deploy/music-studio-api/releases/20241013012803/config/secrets.yml
+  INFO [c1051a57] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO [8dbf60ff] Running /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013012803 /home/deploy/music-studio-api/releases/20241013012803/tmp /home/deploy/music-studio-api/releases/20241013012803/public as deploy@67.205.165.187
+ DEBUG [8dbf60ff] Command: /usr/bin/env mkdir -p /home/deploy/music-studio-api/releases/20241013012803 /home/deploy/music-studio-api/releases/20241013012803/tmp /home/deploy/music-studio-api/releases/20241013012803/public
+  INFO [8dbf60ff] Finished in 0.121 seconds with exit status 0 (successful).
+ DEBUG [79be76ac] Running [ -L /home/deploy/music-studio-api/releases/20241013012803/log ] as deploy@67.205.165.187
+ DEBUG [79be76ac] Command: [ -L /home/deploy/music-studio-api/releases/20241013012803/log ]
+ DEBUG [79be76ac] Finished in 0.123 seconds with exit status 1 (failed).
+ DEBUG [c4c16ac6] Running [ -d /home/deploy/music-studio-api/releases/20241013012803/log ] as deploy@67.205.165.187
+ DEBUG [c4c16ac6] Command: [ -d /home/deploy/music-studio-api/releases/20241013012803/log ]
+ DEBUG [c4c16ac6] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [d3e14dd2] Running /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013012803/log as deploy@67.205.165.187
+ DEBUG [d3e14dd2] Command: /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013012803/log
+  INFO [d3e14dd2] Finished in 0.142 seconds with exit status 0 (successful).
+  INFO [24e7c183] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/releases/20241013012803/log as deploy@67.205.165.187
+ DEBUG [24e7c183] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/log /home/deploy/music-studio-api/releases/20241013012803/log
+  INFO [24e7c183] Finished in 0.137 seconds with exit status 0 (successful).
+ DEBUG [78c3b82e] Running [ -L /home/deploy/music-studio-api/releases/20241013012803/tmp/pids ] as deploy@67.205.165.187
+ DEBUG [78c3b82e] Command: [ -L /home/deploy/music-studio-api/releases/20241013012803/tmp/pids ]
+ DEBUG [78c3b82e] Finished in 0.121 seconds with exit status 1 (failed).
+ DEBUG [aa0af47f] Running [ -d /home/deploy/music-studio-api/releases/20241013012803/tmp/pids ] as deploy@67.205.165.187
+ DEBUG [aa0af47f] Command: [ -d /home/deploy/music-studio-api/releases/20241013012803/tmp/pids ]
+ DEBUG [aa0af47f] Finished in 0.113 seconds with exit status 1 (failed).
+  INFO [a421b0df] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/releases/20241013012803/tmp/pids as deploy@67.205.165.187
+ DEBUG [a421b0df] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/pids /home/deploy/music-studio-api/releases/20241013012803/tmp/pids
+  INFO [a421b0df] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [ca873aa1] Running [ -L /home/deploy/music-studio-api/releases/20241013012803/tmp/cache ] as deploy@67.205.165.187
+ DEBUG [ca873aa1] Command: [ -L /home/deploy/music-studio-api/releases/20241013012803/tmp/cache ]
+ DEBUG [ca873aa1] Finished in 0.119 seconds with exit status 1 (failed).
+ DEBUG [489be081] Running [ -d /home/deploy/music-studio-api/releases/20241013012803/tmp/cache ] as deploy@67.205.165.187
+ DEBUG [489be081] Command: [ -d /home/deploy/music-studio-api/releases/20241013012803/tmp/cache ]
+ DEBUG [489be081] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [3a6550d3] Running /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013012803/tmp/cache as deploy@67.205.165.187
+ DEBUG [3a6550d3] Command: /usr/bin/env rm -rf /home/deploy/music-studio-api/releases/20241013012803/tmp/cache
+  INFO [3a6550d3] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [12196e44] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/releases/20241013012803/tmp/cache as deploy@67.205.165.187
+ DEBUG [12196e44] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/cache /home/deploy/music-studio-api/releases/20241013012803/tmp/cache
+  INFO [12196e44] Finished in 0.122 seconds with exit status 0 (successful).
+ DEBUG [e65644f1] Running [ -L /home/deploy/music-studio-api/releases/20241013012803/tmp/sockets ] as deploy@67.205.165.187
+ DEBUG [e65644f1] Command: [ -L /home/deploy/music-studio-api/releases/20241013012803/tmp/sockets ]
+ DEBUG [e65644f1] Finished in 0.127 seconds with exit status 1 (failed).
+ DEBUG [f3956b01] Running [ -d /home/deploy/music-studio-api/releases/20241013012803/tmp/sockets ] as deploy@67.205.165.187
+ DEBUG [f3956b01] Command: [ -d /home/deploy/music-studio-api/releases/20241013012803/tmp/sockets ]
+ DEBUG [f3956b01] Finished in 0.126 seconds with exit status 1 (failed).
+  INFO [ca1ae97e] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/releases/20241013012803/tmp/sockets as deploy@67.205.165.187
+ DEBUG [ca1ae97e] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/tmp/sockets /home/deploy/music-studio-api/releases/20241013012803/tmp/sockets
+  INFO [ca1ae97e] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [4c269050] Running [ -L /home/deploy/music-studio-api/releases/20241013012803/public/system ] as deploy@67.205.165.187
+ DEBUG [4c269050] Command: [ -L /home/deploy/music-studio-api/releases/20241013012803/public/system ]
+ DEBUG [4c269050] Finished in 0.104 seconds with exit status 1 (failed).
+ DEBUG [5d3ffc00] Running [ -d /home/deploy/music-studio-api/releases/20241013012803/public/system ] as deploy@67.205.165.187
+ DEBUG [5d3ffc00] Command: [ -d /home/deploy/music-studio-api/releases/20241013012803/public/system ]
+ DEBUG [5d3ffc00] Finished in 0.111 seconds with exit status 1 (failed).
+  INFO [68e88f8f] Running /usr/bin/env ln -s /home/deploy/music-studio-api/shared/public/system /home/deploy/music-studio-api/releases/20241013012803/public/system as deploy@67.205.165.187
+ DEBUG [68e88f8f] Command: /usr/bin/env ln -s /home/deploy/music-studio-api/shared/public/system /home/deploy/music-studio-api/releases/20241013012803/public/system
+  INFO [68e88f8f] Finished in 0.114 seconds with exit status 0 (successful).
+ DEBUG [0cfddfa9] Running if test ! -d /home/deploy/music-studio-api/releases/20241013012803; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013012803'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [0cfddfa9] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013012803; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013012803'" 1>&2; false; fi
+ DEBUG [0cfddfa9] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [35c0b481] Running ~/.rvm/bin/rvm default do bundle config --local deployment true as deploy@67.205.165.187
+ DEBUG [35c0b481] Command: cd /home/deploy/music-studio-api/releases/20241013012803 && ~/.rvm/bin/rvm default do bundle config --local deployment true
+  INFO [35c0b481] Finished in 1.295 seconds with exit status 0 (successful).
+  INFO [6221d832] Running ~/.rvm/bin/rvm default do bundle config --local path /home/deploy/music-studio-api/shared/bundle as deploy@67.205.165.187
+ DEBUG [6221d832] Command: cd /home/deploy/music-studio-api/releases/20241013012803 && ~/.rvm/bin/rvm default do bundle config --local path /home/deploy/music-studio-api/shared/bundle
+  INFO [6221d832] Finished in 1.334 seconds with exit status 0 (successful).
+  INFO [599f8a46] Running ~/.rvm/bin/rvm default do bundle config --local without development:test as deploy@67.205.165.187
+ DEBUG [599f8a46] Command: cd /home/deploy/music-studio-api/releases/20241013012803 && ~/.rvm/bin/rvm default do bundle config --local without development:test
+  INFO [599f8a46] Finished in 1.272 seconds with exit status 0 (successful).
+ DEBUG [2d617112] Running if test ! -d /home/deploy/music-studio-api/releases/20241013012803; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013012803'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [2d617112] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013012803; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013012803'" 1>&2; false; fi
+ DEBUG [2d617112] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [c207d855] Running ~/.rvm/bin/rvm default do bundle check as deploy@67.205.165.187
+ DEBUG [c207d855] Command: cd /home/deploy/music-studio-api/releases/20241013012803 && ~/.rvm/bin/rvm default do bundle check
+ DEBUG [c207d855] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.2.17). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.17`.
+ DEBUG [c207d855] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [c207d855] 	The Gemfile's dependencies are satisfied
+ DEBUG [c207d855] Finished in 1.425 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [a32a6747] Running if test ! -d /home/deploy/music-studio-api/releases/20241013012803; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013012803'" 1>&2; false; fi as deploy@67.205.165.187
+ DEBUG [a32a6747] Command: if test ! -d /home/deploy/music-studio-api/releases/20241013012803; then echo "Directory does not exist '/home/deploy/music-studio-api/releases/20241013012803'" 1>&2; false; fi
+ DEBUG [a32a6747] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [f04761eb] Running ~/.rvm/bin/rvm default do bundle exec rake db:migrate as deploy@67.205.165.187
+ DEBUG [f04761eb] Command: cd /home/deploy/music-studio-api/releases/20241013012803 && ( export RAILS_ENV="production" ; ~/.rvm/bin/rvm default do bundle exec rake db:migrate )
+ DEBUG [f04761eb] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/type.rb:27: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+ DEBUG [f04761eb] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/type/adapter_specific_registry.rb:9: warning: The called method `add_modifier' is defined here
+ DEBUG [f04761eb] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/integer.rb:13: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+ DEBUG [f04761eb] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+ DEBUG [f04761eb] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/oid/specialized_string.rb:12: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+ DEBUG [f04761eb] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+ DEBUG [f04761eb] 	rake aborted!
+ DEBUG [f04761eb] 	ArgumentError: Unknown migration version "7.2"; expected one of "4.2", "5.0", "5.1", "5.2"
+ DEBUG [f04761eb] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration/compatibility.rb:11:in `find'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:536:in `[]'
+/home/deploy/music-studio-api/releases/20241013012803/db/migrate/20241012040855_create_students.rb:1:in `<main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:986:in `load_migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:982:in `migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:977:in `disable_ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1350:in `use_transaction?'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1297:in `rescue in execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1285:in `execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1263:in `block in migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `each'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `block in migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1363:in `with_advisory_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1036:in `up'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1011:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/tasks/database_tasks.rb:172:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/railties/databases.rake:60:in `block (2 levels) in <main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `eval'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
+ DEBUG [f04761eb] 	
+Caused by:
+ DEBUG [f04761eb] 	ArgumentError: Unknown migration version "7.2"; expected one of "4.2", "5.0", "5.1", "5.2"
+ DEBUG [f04761eb] 	/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration/compatibility.rb:11:in `find'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:536:in `[]'
+/home/deploy/music-studio-api/releases/20241013012803/db/migrate/20241012040855_create_students.rb:1:in `<main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:986:in `load_migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:982:in `migration'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:977:in `disable_ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1350:in `use_transaction?'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1342:in `ddl_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1291:in `execute_migration_in_transaction'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1263:in `block in migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `each'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1262:in `migrate_without_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `block in migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1363:in `with_advisory_lock'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1210:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1036:in `up'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/migration.rb:1011:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/tasks/database_tasks.rb:172:in `migrate'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/railties/databases.rake:60:in `block (2 levels) in <main>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `eval'
+/home/deploy/music-studio-api/shared/bundle/ruby/2.7.0/bin/ruby_executable_hooks:24:in `<main>'
+ DEBUG [f04761eb] 	Tasks: TOP => db:migrate
+ DEBUG [f04761eb] 	(See full trace by running task with --trace)
