@@ -65,4 +65,14 @@ namespace :deploy do
   end
 end  
 
+task :migrate_db do
+  on roles(:db) do
+    within release_path do
+      with rails_env: fetch(:rails_env) do
+        execute :rake, 'db:migrate'
+      end
+    end
+  end
+end
+
 after 'deploy:finishing', 'deploy:cleanup_with_sudo'
