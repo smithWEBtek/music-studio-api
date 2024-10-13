@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: deploy
+  password: pointer
+development:
+  <<: *default
+  database: voter-preference-app_development
+test:
+  <<: *default
+  database: voter-preference-app_test
+production:
+  <<: *default
+  database: voter-preference-app_production

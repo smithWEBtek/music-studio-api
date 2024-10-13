@@ -1,0 +1,1654 @@
+  [1m[35m (174.4ms)[0m  [1m[35mCREATE DATABASE "voter-preference-app_development" ENCODING = 'unicode'[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (73.5ms)[0m  [1m[35mCREATE DATABASE "voter-preference-app_test" ENCODING = 'unicode'[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5222333886907348365)[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+Migrating to CreateVoters (20190119234333)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "voters" ("id" bigserial primary key, "vote_preference" character varying, "street_number" character varying, "street_name" character varying, "city" character varying, "state" character varying, "postal_code" character varying, "geocode" character varying, "address_string" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190119234333_create_voters.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190119234333"]]
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-10-11 20:14:53.496847"], ["updated_at", "2024-10-11 20:14:53.496847"]]
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5222333886907348365)[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+Started GET "/" for ::1 at 2024-10-11 16:15:10 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.6ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 13ms (Views: 7.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2024-10-11 16:15:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-10-11 16:23:25 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.6ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/voters" for ::1 at 2024-10-11 16:23:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/voters"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-10-11 16:23:37 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.2ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails_routes" for ::1 at 2024-10-11 16:24:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/rails_routes"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/voters" for ::1 at 2024-10-11 16:25:01 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.3ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/voters" for ::1 at 2024-10-11 16:26:56 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.3ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2024-10-11 16:26:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/apivoters" for 127.0.0.1 at 2024-10-11 16:33:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/apivoters"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/apivoters" for 127.0.0.1 at 2024-10-11 16:33:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/apivoters"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/apivoters" for 127.0.0.1 at 2024-10-11 16:33:11 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/apivoters"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/voters" for 127.0.0.1 at 2024-10-11 16:33:24 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.9ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/voters" for 127.0.0.1 at 2024-10-11 16:33:28 -0400
+Processing by Api::VotersController#create as */*
+  Parameters: {"voter"=>{"geocode"=>"42.40445,-71.11701", "street_number"=>"209", "street_name"=>"College Ave", "city"=>"Somerville", "state"=>"MA", "postal_code"=>"02144", "vote_preference"=>"undecided", "address_string"=>"209 College Ave, Somerville, MA 02144"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[36mVoter Create (0.8ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "geocode", "address_string", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "209"], ["street_name", "College Ave"], ["city", "Somerville"], ["state", "MA"], ["postal_code", "02144"], ["geocode", "42.40445,-71.11701"], ["address_string", "209 College Ave, Somerville, MA 02144"], ["created_at", "2024-10-11 20:33:28.385519"], ["updated_at", "2024-10-11 20:33:28.385519"]]
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+[active_model_serializers] Rendered VoterSerializer with ActiveModelSerializers::Adapter::Attributes (1.11ms)
+Completed 200 OK in 31ms (Views: 8.1ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/api/voters" for 127.0.0.1 at 2024-10-11 16:33:41 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.4ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.64ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/voters" for 127.0.0.1 at 2024-10-11 16:33:47 -0400
+Processing by Api::VotersController#create as */*
+  Parameters: {"voter"=>{"geocode"=>"42.39277,-71.1228", "street_number"=>"25", "street_name"=>"Russell St", "city"=>"Somerville", "state"=>"MA", "postal_code"=>"02144", "vote_preference"=>"undecided", "address_string"=>"25 Russell St, Somerville, MA 02144"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[36mVoter Create (0.4ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "geocode", "address_string", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "25"], ["street_name", "Russell St"], ["city", "Somerville"], ["state", "MA"], ["postal_code", "02144"], ["geocode", "42.39277,-71.1228"], ["address_string", "25 Russell St, Somerville, MA 02144"], ["created_at", "2024-10-11 20:33:47.425977"], ["updated_at", "2024-10-11 20:33:47.425977"]]
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+[active_model_serializers] Rendered VoterSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/voters" for 127.0.0.1 at 2024-10-11 16:33:52 -0400
+Processing by Api::VotersController#create as */*
+  Parameters: {"voter"=>{"geocode"=>"42.33516,-71.08181", "street_number"=>"10", "street_name"=>"Kendall St", "city"=>"Boston", "state"=>"MA", "postal_code"=>"02118", "vote_preference"=>"oppose", "address_string"=>"10 Kendall St, Boston, MA 02118"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[36mVoter Create (0.5ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "geocode", "address_string", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "10"], ["street_name", "Kendall St"], ["city", "Boston"], ["state", "MA"], ["postal_code", "02118"], ["geocode", "42.33516,-71.08181"], ["address_string", "10 Kendall St, Boston, MA 02118"], ["created_at", "2024-10-11 20:33:52.208794"], ["updated_at", "2024-10-11 20:33:52.208794"]]
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+[active_model_serializers] Rendered VoterSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/voters" for 127.0.0.1 at 2024-10-11 16:33:56 -0400
+Processing by Api::VotersController#create as */*
+  Parameters: {"voter"=>{"geocode"=>"42.36146,-71.12698", "street_number"=>"90", "street_name"=>"Seattle St", "city"=>"Allston", "state"=>"MA", "postal_code"=>"02134", "vote_preference"=>"support", "address_string"=>"90 Seattle St, Allston, MA 02134"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[36mVoter Create (0.6ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "geocode", "address_string", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "90"], ["street_name", "Seattle St"], ["city", "Allston"], ["state", "MA"], ["postal_code", "02134"], ["geocode", "42.36146,-71.12698"], ["address_string", "90 Seattle St, Allston, MA 02134"], ["created_at", "2024-10-11 20:33:56.836810"], ["updated_at", "2024-10-11 20:33:56.836810"]]
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+[active_model_serializers] Rendered VoterSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/voters" for 127.0.0.1 at 2024-10-11 16:34:00 -0400
+Processing by Api::VotersController#create as */*
+  Parameters: {"voter"=>{"geocode"=>"42.41623,-71.02489", "street_number"=>"398", "street_name"=>"Proctor Ave", "city"=>"Revere", "state"=>"MA", "postal_code"=>"02151", "vote_preference"=>"oppose", "address_string"=>"398 Proctor Ave, Revere, MA 02151"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[36mVoter Create (1.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "geocode", "address_string", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "398"], ["street_name", "Proctor Ave"], ["city", "Revere"], ["state", "MA"], ["postal_code", "02151"], ["geocode", "42.41623,-71.02489"], ["address_string", "398 Proctor Ave, Revere, MA 02151"], ["created_at", "2024-10-11 20:34:00.624141"], ["updated_at", "2024-10-11 20:34:00.624141"]]
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+[active_model_serializers] Rendered VoterSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 2.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brad/.rvm/gems/ruby-2.7.1/bin/rake:23
+  [1m[36mVoter Load (0.5ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mVoter Destroy (0.8ms)[0m  [1m[31mDELETE FROM "voters" WHERE "voters"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mVoter Destroy (0.5ms)[0m  [1m[31mDELETE FROM "voters" WHERE "voters"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:37
+  [1m[36mVoter Destroy (0.5ms)[0m  [1m[31mDELETE FROM "voters" WHERE "voters"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:37
+  [1m[36mVoter Destroy (0.5ms)[0m  [1m[31mDELETE FROM "voters" WHERE "voters"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:37
+  [1m[36mVoter Destroy (0.5ms)[0m  [1m[31mDELETE FROM "voters" WHERE "voters"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "72509"], ["street_name", "Utah"], ["city", "Huntington"], ["state", "WV"], ["postal_code", "25716"], ["created_at", "2024-10-11 20:34:58.884885"], ["updated_at", "2024-10-11 20:34:58.884885"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "91"], ["street_name", "Gateway"], ["city", "Charlotte"], ["state", "NC"], ["postal_code", "28220"], ["created_at", "2024-10-11 20:34:58.886940"], ["updated_at", "2024-10-11 20:34:58.886940"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "97"], ["street_name", "Veith"], ["city", "Cincinnati"], ["state", "OH"], ["postal_code", "45249"], ["created_at", "2024-10-11 20:34:58.888409"], ["updated_at", "2024-10-11 20:34:58.888409"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "7137"], ["street_name", "Buell"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10014"], ["created_at", "2024-10-11 20:34:58.889986"], ["updated_at", "2024-10-11 20:34:58.889986"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "02"], ["street_name", "Ronald Regan"], ["city", "Independence"], ["state", "MO"], ["postal_code", "64054"], ["created_at", "2024-10-11 20:34:58.891514"], ["updated_at", "2024-10-11 20:34:58.891514"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "52"], ["street_name", "Melrose"], ["city", "New Haven"], ["state", "CT"], ["postal_code", "06538"], ["created_at", "2024-10-11 20:34:58.893410"], ["updated_at", "2024-10-11 20:34:58.893410"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "3371"], ["street_name", "Katie"], ["city", "Houston"], ["state", "TX"], ["postal_code", "77293"], ["created_at", "2024-10-11 20:34:58.895218"], ["updated_at", "2024-10-11 20:34:58.895218"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "42"], ["street_name", "Birchwood"], ["city", "Reading"], ["state", "PA"], ["postal_code", "19610"], ["created_at", "2024-10-11 20:34:58.896858"], ["updated_at", "2024-10-11 20:34:58.896858"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "813"], ["street_name", "Anzinger"], ["city", "Washington"], ["state", "DC"], ["postal_code", "20530"], ["created_at", "2024-10-11 20:34:58.898604"], ["updated_at", "2024-10-11 20:34:58.898604"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "2"], ["street_name", "Rutledge"], ["city", "Montpelier"], ["state", "VT"], ["postal_code", "05609"], ["created_at", "2024-10-11 20:34:58.900622"], ["updated_at", "2024-10-11 20:34:58.900622"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "55"], ["street_name", "Mandrake"], ["city", "Atlanta"], ["state", "GA"], ["postal_code", "30336"], ["created_at", "2024-10-11 20:34:58.902478"], ["updated_at", "2024-10-11 20:34:58.902478"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "39"], ["street_name", "Forest"], ["city", "Montpelier"], ["state", "VT"], ["postal_code", "05609"], ["created_at", "2024-10-11 20:34:58.904058"], ["updated_at", "2024-10-11 20:34:58.904058"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "44"], ["street_name", "Emmet"], ["city", "Houston"], ["state", "TX"], ["postal_code", "77060"], ["created_at", "2024-10-11 20:34:58.905701"], ["updated_at", "2024-10-11 20:34:58.905701"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "0"], ["street_name", "Sauthoff"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10203"], ["created_at", "2024-10-11 20:34:58.907242"], ["updated_at", "2024-10-11 20:34:58.907242"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "6"], ["street_name", "Packers"], ["city", "Springfield"], ["state", "IL"], ["postal_code", "62718"], ["created_at", "2024-10-11 20:34:58.909179"], ["updated_at", "2024-10-11 20:34:58.909179"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "88197"], ["street_name", "Pepper Wood"], ["city", "Redwood City"], ["state", "CA"], ["postal_code", "94064"], ["created_at", "2024-10-11 20:34:58.910684"], ["updated_at", "2024-10-11 20:34:58.910684"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "39"], ["street_name", "Haas"], ["city", "Winston Salem"], ["state", "NC"], ["postal_code", "27105"], ["created_at", "2024-10-11 20:34:58.911920"], ["updated_at", "2024-10-11 20:34:58.911920"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "2"], ["street_name", "Algoma"], ["city", "Lakeland"], ["state", "FL"], ["postal_code", "33805"], ["created_at", "2024-10-11 20:34:58.913534"], ["updated_at", "2024-10-11 20:34:58.913534"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "8"], ["street_name", "Anzinger"], ["city", "Syracuse"], ["state", "NY"], ["postal_code", "13224"], ["created_at", "2024-10-11 20:34:58.915170"], ["updated_at", "2024-10-11 20:34:58.915170"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "81442"], ["street_name", "Sunnyside"], ["city", "Chicago"], ["state", "IL"], ["postal_code", "60669"], ["created_at", "2024-10-11 20:34:58.916404"], ["updated_at", "2024-10-11 20:34:58.916404"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "25523"], ["street_name", "Rusk"], ["city", "Spartanburg"], ["state", "SC"], ["postal_code", "29305"], ["created_at", "2024-10-11 20:34:58.917548"], ["updated_at", "2024-10-11 20:34:58.917548"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "6"], ["street_name", "New Castle"], ["city", "Corpus Christi"], ["state", "TX"], ["postal_code", "78405"], ["created_at", "2024-10-11 20:34:58.918701"], ["updated_at", "2024-10-11 20:34:58.918701"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "1476"], ["street_name", "Burrows"], ["city", "Houston"], ["state", "TX"], ["postal_code", "77030"], ["created_at", "2024-10-11 20:34:58.919927"], ["updated_at", "2024-10-11 20:34:58.919927"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "27"], ["street_name", "Bonner"], ["city", "Cincinnati"], ["state", "OH"], ["postal_code", "45243"], ["created_at", "2024-10-11 20:34:58.921105"], ["updated_at", "2024-10-11 20:34:58.921105"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "6600"], ["street_name", "Milwaukee"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14652"], ["created_at", "2024-10-11 20:34:58.922308"], ["updated_at", "2024-10-11 20:34:58.922308"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "33594"], ["street_name", "Twin Pines"], ["city", "Philadelphia"], ["state", "PA"], ["postal_code", "19172"], ["created_at", "2024-10-11 20:34:58.923285"], ["updated_at", "2024-10-11 20:34:58.923285"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "83909"], ["street_name", "Jenna"], ["city", "Albuquerque"], ["state", "NM"], ["postal_code", "87195"], ["created_at", "2024-10-11 20:34:58.924229"], ["updated_at", "2024-10-11 20:34:58.924229"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "9"], ["street_name", "Red Cloud"], ["city", "Raleigh"], ["state", "NC"], ["postal_code", "27605"], ["created_at", "2024-10-11 20:34:58.925430"], ["updated_at", "2024-10-11 20:34:58.925430"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.4ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "6"], ["street_name", "Hooker"], ["city", "Baton Rouge"], ["state", "LA"], ["postal_code", "70894"], ["created_at", "2024-10-11 20:34:58.927174"], ["updated_at", "2024-10-11 20:34:58.927174"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "388"], ["street_name", "Pine View"], ["city", "Mobile"], ["state", "AL"], ["postal_code", "36605"], ["created_at", "2024-10-11 20:34:58.929124"], ["updated_at", "2024-10-11 20:34:58.929124"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "371"], ["street_name", "Oneill"], ["city", "Akron"], ["state", "OH"], ["postal_code", "44310"], ["created_at", "2024-10-11 20:34:58.930276"], ["updated_at", "2024-10-11 20:34:58.930276"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "76327"], ["street_name", "Moland"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10120"], ["created_at", "2024-10-11 20:34:58.931362"], ["updated_at", "2024-10-11 20:34:58.931362"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "39"], ["street_name", "Sage"], ["city", "Kansas City"], ["state", "MO"], ["postal_code", "64193"], ["created_at", "2024-10-11 20:34:58.932720"], ["updated_at", "2024-10-11 20:34:58.932720"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "6"], ["street_name", "Almo"], ["city", "Alpharetta"], ["state", "GA"], ["postal_code", "30022"], ["created_at", "2024-10-11 20:34:58.933883"], ["updated_at", "2024-10-11 20:34:58.933883"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "7072"], ["street_name", "Bunker Hill"], ["city", "Pittsburgh"], ["state", "PA"], ["postal_code", "15240"], ["created_at", "2024-10-11 20:34:58.934920"], ["updated_at", "2024-10-11 20:34:58.934920"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "72080"], ["street_name", "Donald"], ["city", "Richmond"], ["state", "VA"], ["postal_code", "23260"], ["created_at", "2024-10-11 20:34:58.935959"], ["updated_at", "2024-10-11 20:34:58.935959"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "75509"], ["street_name", "Continental"], ["city", "San Jose"], ["state", "CA"], ["postal_code", "95150"], ["created_at", "2024-10-11 20:34:58.936947"], ["updated_at", "2024-10-11 20:34:58.936947"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "830"], ["street_name", "Namekagon"], ["city", "Sacramento"], ["state", "CA"], ["postal_code", "94237"], ["created_at", "2024-10-11 20:34:58.937977"], ["updated_at", "2024-10-11 20:34:58.937977"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "38108"], ["street_name", "Rusk"], ["city", "Des Moines"], ["state", "IA"], ["postal_code", "50305"], ["created_at", "2024-10-11 20:34:58.939092"], ["updated_at", "2024-10-11 20:34:58.939092"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "8"], ["street_name", "Thompson"], ["city", "Tampa"], ["state", "FL"], ["postal_code", "33625"], ["created_at", "2024-10-11 20:34:58.940334"], ["updated_at", "2024-10-11 20:34:58.940334"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "4871"], ["street_name", "Fremont"], ["city", "Valdosta"], ["state", "GA"], ["postal_code", "31605"], ["created_at", "2024-10-11 20:34:58.941449"], ["updated_at", "2024-10-11 20:34:58.941449"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "9832"], ["street_name", "Northridge"], ["city", "Kansas City"], ["state", "MO"], ["postal_code", "64125"], ["created_at", "2024-10-11 20:34:58.942549"], ["updated_at", "2024-10-11 20:34:58.942549"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "23042"], ["street_name", "Vahlen"], ["city", "Oklahoma City"], ["state", "OK"], ["postal_code", "73190"], ["created_at", "2024-10-11 20:34:58.943577"], ["updated_at", "2024-10-11 20:34:58.943577"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "89898"], ["street_name", "Service"], ["city", "San Bernardino"], ["state", "CA"], ["postal_code", "92405"], ["created_at", "2024-10-11 20:34:58.944530"], ["updated_at", "2024-10-11 20:34:58.944530"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "3418"], ["street_name", "Marcy"], ["city", "Memphis"], ["state", "TN"], ["postal_code", "38197"], ["created_at", "2024-10-11 20:34:58.945442"], ["updated_at", "2024-10-11 20:34:58.945442"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "4"], ["street_name", "Village"], ["city", "Spokane"], ["state", "WA"], ["postal_code", "99260"], ["created_at", "2024-10-11 20:34:58.946573"], ["updated_at", "2024-10-11 20:34:58.946573"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "96"], ["street_name", "Springview"], ["city", "El Paso"], ["state", "TX"], ["postal_code", "88589"], ["created_at", "2024-10-11 20:34:58.948088"], ["updated_at", "2024-10-11 20:34:58.948088"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "87085"], ["street_name", "Vidon"], ["city", "Riverside"], ["state", "CA"], ["postal_code", "92513"], ["created_at", "2024-10-11 20:34:58.949337"], ["updated_at", "2024-10-11 20:34:58.949337"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "8"], ["street_name", "Hansons"], ["city", "Lancaster"], ["state", "PA"], ["postal_code", "17622"], ["created_at", "2024-10-11 20:34:58.950374"], ["updated_at", "2024-10-11 20:34:58.950374"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "704"], ["street_name", "Washington"], ["city", "Kansas City"], ["state", "MO"], ["postal_code", "64149"], ["created_at", "2024-10-11 20:34:58.951388"], ["updated_at", "2024-10-11 20:34:58.951388"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "44062"], ["street_name", "2nd"], ["city", "Lubbock"], ["state", "TX"], ["postal_code", "79415"], ["created_at", "2024-10-11 20:34:58.952411"], ["updated_at", "2024-10-11 20:34:58.952411"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "85"], ["street_name", "Dennis"], ["city", "Jacksonville"], ["state", "FL"], ["postal_code", "32215"], ["created_at", "2024-10-11 20:34:58.953347"], ["updated_at", "2024-10-11 20:34:58.953347"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "6"], ["street_name", "Glacier Hill"], ["city", "Pasadena"], ["state", "CA"], ["postal_code", "91199"], ["created_at", "2024-10-11 20:34:58.954309"], ["updated_at", "2024-10-11 20:34:58.954309"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "93152"], ["street_name", "Schlimgen"], ["city", "Saint Paul"], ["state", "MN"], ["postal_code", "55127"], ["created_at", "2024-10-11 20:34:58.955286"], ["updated_at", "2024-10-11 20:34:58.955286"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "30113"], ["street_name", "Hanover"], ["city", "El Paso"], ["state", "TX"], ["postal_code", "88514"], ["created_at", "2024-10-11 20:34:58.956276"], ["updated_at", "2024-10-11 20:34:58.956276"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "7727"], ["street_name", "Huxley"], ["city", "San Antonio"], ["state", "TX"], ["postal_code", "78215"], ["created_at", "2024-10-11 20:34:58.957414"], ["updated_at", "2024-10-11 20:34:58.957414"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "2"], ["street_name", "Merchant"], ["city", "Virginia Beach"], ["state", "VA"], ["postal_code", "23454"], ["created_at", "2024-10-11 20:34:58.958489"], ["updated_at", "2024-10-11 20:34:58.958489"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "37710"], ["street_name", "Elgar"], ["city", "Fort Wayne"], ["state", "IN"], ["postal_code", "46857"], ["created_at", "2024-10-11 20:34:58.959435"], ["updated_at", "2024-10-11 20:34:58.959435"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "8"], ["street_name", "Westridge"], ["city", "New Orleans"], ["state", "LA"], ["postal_code", "70174"], ["created_at", "2024-10-11 20:34:58.960423"], ["updated_at", "2024-10-11 20:34:58.960423"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "27866"], ["street_name", "Randy"], ["city", "Huntsville"], ["state", "TX"], ["postal_code", "77343"], ["created_at", "2024-10-11 20:34:58.961443"], ["updated_at", "2024-10-11 20:34:58.961443"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "37"], ["street_name", "Algoma"], ["city", "Houston"], ["state", "TX"], ["postal_code", "77245"], ["created_at", "2024-10-11 20:34:58.963086"], ["updated_at", "2024-10-11 20:34:58.963086"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "70138"], ["street_name", "Delladonna"], ["city", "Miami"], ["state", "FL"], ["postal_code", "33175"], ["created_at", "2024-10-11 20:34:58.964336"], ["updated_at", "2024-10-11 20:34:58.964336"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "5168"], ["street_name", "Morning"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14683"], ["created_at", "2024-10-11 20:34:58.965508"], ["updated_at", "2024-10-11 20:34:58.965508"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "8"], ["street_name", "Forster"], ["city", "Cincinnati"], ["state", "OH"], ["postal_code", "45249"], ["created_at", "2024-10-11 20:34:58.966881"], ["updated_at", "2024-10-11 20:34:58.966881"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "32357"], ["street_name", "Pennsylvania"], ["city", "Midland"], ["state", "MI"], ["postal_code", "48670"], ["created_at", "2024-10-11 20:34:58.968362"], ["updated_at", "2024-10-11 20:34:58.968362"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "326"], ["street_name", "Brickson Park"], ["city", "Charlotte"], ["state", "NC"], ["postal_code", "28225"], ["created_at", "2024-10-11 20:34:58.973944"], ["updated_at", "2024-10-11 20:34:58.973944"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "7"], ["street_name", "Summerview"], ["city", "Santa Ana"], ["state", "CA"], ["postal_code", "92725"], ["created_at", "2024-10-11 20:34:58.975393"], ["updated_at", "2024-10-11 20:34:58.975393"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "26"], ["street_name", "Di Loreto"], ["city", "Tampa"], ["state", "FL"], ["postal_code", "33686"], ["created_at", "2024-10-11 20:34:58.976762"], ["updated_at", "2024-10-11 20:34:58.976762"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "7"], ["street_name", "Village"], ["city", "Fullerton"], ["state", "CA"], ["postal_code", "92835"], ["created_at", "2024-10-11 20:34:58.977895"], ["updated_at", "2024-10-11 20:34:58.977895"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "027"], ["street_name", "Mcbride"], ["city", "Fresno"], ["state", "CA"], ["postal_code", "93778"], ["created_at", "2024-10-11 20:34:58.978931"], ["updated_at", "2024-10-11 20:34:58.978931"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "9"], ["street_name", "Grasskamp"], ["city", "Tulsa"], ["state", "OK"], ["postal_code", "74133"], ["created_at", "2024-10-11 20:34:58.979902"], ["updated_at", "2024-10-11 20:34:58.979902"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.5ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "134"], ["street_name", "Anthes"], ["city", "Toledo"], ["state", "OH"], ["postal_code", "43666"], ["created_at", "2024-10-11 20:34:58.981032"], ["updated_at", "2024-10-11 20:34:58.981032"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "679"], ["street_name", "Dovetail"], ["city", "Washington"], ["state", "DC"], ["postal_code", "20414"], ["created_at", "2024-10-11 20:34:58.982515"], ["updated_at", "2024-10-11 20:34:58.982515"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "73"], ["street_name", "Sheridan"], ["city", "Richmond"], ["state", "VA"], ["postal_code", "23260"], ["created_at", "2024-10-11 20:34:58.983677"], ["updated_at", "2024-10-11 20:34:58.983677"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "23"], ["street_name", "Erie"], ["city", "Tacoma"], ["state", "WA"], ["postal_code", "98481"], ["created_at", "2024-10-11 20:34:58.984702"], ["updated_at", "2024-10-11 20:34:58.984702"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "20781"], ["street_name", "Kingsford"], ["city", "Charlotte"], ["state", "NC"], ["postal_code", "28247"], ["created_at", "2024-10-11 20:34:58.985662"], ["updated_at", "2024-10-11 20:34:58.985662"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "333"], ["street_name", "Lerdahl"], ["city", "Louisville"], ["state", "KY"], ["postal_code", "40225"], ["created_at", "2024-10-11 20:34:58.986712"], ["updated_at", "2024-10-11 20:34:58.986712"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "49"], ["street_name", "Clemons"], ["city", "Baton Rouge"], ["state", "LA"], ["postal_code", "70883"], ["created_at", "2024-10-11 20:34:58.987706"], ["updated_at", "2024-10-11 20:34:58.987706"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "6"], ["street_name", "Rigney"], ["city", "Saint Petersburg"], ["state", "FL"], ["postal_code", "33705"], ["created_at", "2024-10-11 20:34:58.988831"], ["updated_at", "2024-10-11 20:34:58.988831"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "36158"], ["street_name", "Blaine"], ["city", "Orlando"], ["state", "FL"], ["postal_code", "32813"], ["created_at", "2024-10-11 20:34:58.989790"], ["updated_at", "2024-10-11 20:34:58.989790"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "160"], ["street_name", "3rd"], ["city", "Columbus"], ["state", "OH"], ["postal_code", "43204"], ["created_at", "2024-10-11 20:34:58.990766"], ["updated_at", "2024-10-11 20:34:58.990766"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "67268"], ["street_name", "Artisan"], ["city", "Harrisburg"], ["state", "PA"], ["postal_code", "17121"], ["created_at", "2024-10-11 20:34:58.991802"], ["updated_at", "2024-10-11 20:34:58.991802"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "2"], ["street_name", "Green"], ["city", "San Jose"], ["state", "CA"], ["postal_code", "95155"], ["created_at", "2024-10-11 20:34:58.992874"], ["updated_at", "2024-10-11 20:34:58.992874"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "9"], ["street_name", "Raven"], ["city", "Washington"], ["state", "DC"], ["postal_code", "20436"], ["created_at", "2024-10-11 20:34:58.993793"], ["updated_at", "2024-10-11 20:34:58.993793"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "1557"], ["street_name", "West"], ["city", "Louisville"], ["state", "KY"], ["postal_code", "40225"], ["created_at", "2024-10-11 20:34:58.994795"], ["updated_at", "2024-10-11 20:34:58.994795"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "3"], ["street_name", "Oneill"], ["city", "Asheville"], ["state", "NC"], ["postal_code", "28815"], ["created_at", "2024-10-11 20:34:58.995831"], ["updated_at", "2024-10-11 20:34:58.995831"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "347"], ["street_name", "Marquette"], ["city", "Newark"], ["state", "DE"], ["postal_code", "19725"], ["created_at", "2024-10-11 20:34:58.997957"], ["updated_at", "2024-10-11 20:34:58.997957"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "0"], ["street_name", "American"], ["city", "Houston"], ["state", "TX"], ["postal_code", "77030"], ["created_at", "2024-10-11 20:34:58.999297"], ["updated_at", "2024-10-11 20:34:58.999297"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "09098"], ["street_name", "Graedel"], ["city", "El Paso"], ["state", "TX"], ["postal_code", "79928"], ["created_at", "2024-10-11 20:34:59.000422"], ["updated_at", "2024-10-11 20:34:59.000422"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "17596"], ["street_name", "Crescent Oaks"], ["city", "Little Rock"], ["state", "AR"], ["postal_code", "72215"], ["created_at", "2024-10-11 20:34:59.001444"], ["updated_at", "2024-10-11 20:34:59.001444"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "87239"], ["street_name", "Clarendon"], ["city", "Davenport"], ["state", "IA"], ["postal_code", "52809"], ["created_at", "2024-10-11 20:34:59.002534"], ["updated_at", "2024-10-11 20:34:59.002534"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "529"], ["street_name", "Graceland"], ["city", "Columbia"], ["state", "SC"], ["postal_code", "29203"], ["created_at", "2024-10-11 20:34:59.004002"], ["updated_at", "2024-10-11 20:34:59.004002"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "85"], ["street_name", "Sage"], ["city", "Pittsburgh"], ["state", "PA"], ["postal_code", "15255"], ["created_at", "2024-10-11 20:34:59.005247"], ["updated_at", "2024-10-11 20:34:59.005247"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "32"], ["street_name", "Kenwood"], ["city", "Raleigh"], ["state", "NC"], ["postal_code", "27635"], ["created_at", "2024-10-11 20:34:59.006333"], ["updated_at", "2024-10-11 20:34:59.006333"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "53005"], ["street_name", "Oak"], ["city", "Appleton"], ["state", "WI"], ["postal_code", "54915"], ["created_at", "2024-10-11 20:34:59.007262"], ["updated_at", "2024-10-11 20:34:59.007262"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "0"], ["street_name", "Forest Run"], ["city", "Boise"], ["state", "ID"], ["postal_code", "83716"], ["created_at", "2024-10-11 20:34:59.008214"], ["updated_at", "2024-10-11 20:34:59.008214"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "34313"], ["street_name", "Badeau"], ["city", "Kansas City"], ["state", "MO"], ["postal_code", "64101"], ["created_at", "2024-10-11 20:34:59.009168"], ["updated_at", "2024-10-11 20:34:59.009168"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "20470"], ["street_name", "Eagan"], ["city", "San Jose"], ["state", "CA"], ["postal_code", "95160"], ["created_at", "2024-10-11 20:34:59.010042"], ["updated_at", "2024-10-11 20:34:59.010042"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "575"], ["street_name", "Scoville"], ["city", "Dallas"], ["state", "TX"], ["postal_code", "75310"], ["created_at", "2024-10-11 20:34:59.011033"], ["updated_at", "2024-10-11 20:34:59.011033"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "93348"], ["street_name", "Troy"], ["city", "Crawfordsville"], ["state", "IN"], ["postal_code", "47937"], ["created_at", "2024-10-11 20:34:59.011939"], ["updated_at", "2024-10-11 20:34:59.011939"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "3618"], ["street_name", "Alpine"], ["city", "Albany"], ["state", "NY"], ["postal_code", "12227"], ["created_at", "2024-10-11 20:34:59.013694"], ["updated_at", "2024-10-11 20:34:59.013694"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "21"], ["street_name", "Oakridge"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10249"], ["created_at", "2024-10-11 20:34:59.015066"], ["updated_at", "2024-10-11 20:34:59.015066"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "8"], ["street_name", "Union"], ["city", "Buffalo"], ["state", "NY"], ["postal_code", "14205"], ["created_at", "2024-10-11 20:34:59.016266"], ["updated_at", "2024-10-11 20:34:59.016266"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "37"], ["street_name", "Myrtle"], ["city", "Jamaica"], ["state", "NY"], ["postal_code", "11499"], ["created_at", "2024-10-11 20:34:59.017337"], ["updated_at", "2024-10-11 20:34:59.017337"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "7034"], ["street_name", "Packers"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14652"], ["created_at", "2024-10-11 20:34:59.018307"], ["updated_at", "2024-10-11 20:34:59.018307"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "15"], ["street_name", "Pleasure"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10155"], ["created_at", "2024-10-11 20:34:59.019233"], ["updated_at", "2024-10-11 20:34:59.019233"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "35794"], ["street_name", "Talmadge"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14614"], ["created_at", "2024-10-11 20:34:59.020218"], ["updated_at", "2024-10-11 20:34:59.020218"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "8564"], ["street_name", "Farragut"], ["city", "Hartford"], ["state", "CT"], ["postal_code", "06145"], ["created_at", "2024-10-11 20:34:59.021238"], ["updated_at", "2024-10-11 20:34:59.021238"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "1"], ["street_name", "Jenna"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10165"], ["created_at", "2024-10-11 20:34:59.022204"], ["updated_at", "2024-10-11 20:34:59.022204"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "84"], ["street_name", "Northridge"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14619"], ["created_at", "2024-10-11 20:34:59.023224"], ["updated_at", "2024-10-11 20:34:59.023224"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "042"], ["street_name", "Kings"], ["city", "Trenton"], ["state", "NJ"], ["postal_code", "08638"], ["created_at", "2024-10-11 20:34:59.024740"], ["updated_at", "2024-10-11 20:34:59.024740"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "37"], ["street_name", "Hanover"], ["city", "Brooklyn"], ["state", "NY"], ["postal_code", "11215"], ["created_at", "2024-10-11 20:34:59.026011"], ["updated_at", "2024-10-11 20:34:59.026011"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "7021"], ["street_name", "Rowland"], ["city", "Danbury"], ["state", "CT"], ["postal_code", "06816"], ["created_at", "2024-10-11 20:34:59.027177"], ["updated_at", "2024-10-11 20:34:59.027177"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "3"], ["street_name", "Comanche"], ["city", "Danbury"], ["state", "CT"], ["postal_code", "06816"], ["created_at", "2024-10-11 20:34:59.028308"], ["updated_at", "2024-10-11 20:34:59.028308"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "7492"], ["street_name", "Lunder"], ["city", "Trenton"], ["state", "NJ"], ["postal_code", "08619"], ["created_at", "2024-10-11 20:34:59.029375"], ["updated_at", "2024-10-11 20:34:59.029375"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "4"], ["street_name", "Nelson"], ["city", "Brockton"], ["state", "MA"], ["postal_code", "02405"], ["created_at", "2024-10-11 20:34:59.030366"], ["updated_at", "2024-10-11 20:34:59.030366"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "499"], ["street_name", "Lawn"], ["city", "Hartford"], ["state", "CT"], ["postal_code", "06105"], ["created_at", "2024-10-11 20:34:59.031342"], ["updated_at", "2024-10-11 20:34:59.031342"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "1350"], ["street_name", "Vidon"], ["city", "Brooklyn"], ["state", "NY"], ["postal_code", "11225"], ["created_at", "2024-10-11 20:34:59.032798"], ["updated_at", "2024-10-11 20:34:59.032798"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "832"], ["street_name", "Reindahl"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10004"], ["created_at", "2024-10-11 20:34:59.034015"], ["updated_at", "2024-10-11 20:34:59.034015"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "84"], ["street_name", "Shasta"], ["city", "Bridgeport"], ["state", "CT"], ["postal_code", "06606"], ["created_at", "2024-10-11 20:34:59.035247"], ["updated_at", "2024-10-11 20:34:59.035247"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "497"], ["street_name", "School"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10165"], ["created_at", "2024-10-11 20:34:59.036382"], ["updated_at", "2024-10-11 20:34:59.036382"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "86"], ["street_name", "Buena Vista"], ["city", "Paterson"], ["state", "NJ"], ["postal_code", "07544"], ["created_at", "2024-10-11 20:34:59.037640"], ["updated_at", "2024-10-11 20:34:59.037640"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "59"], ["street_name", "Bobwhite"], ["city", "Schenectady"], ["state", "NY"], ["postal_code", "12305"], ["created_at", "2024-10-11 20:34:59.038731"], ["updated_at", "2024-10-11 20:34:59.038731"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "4"], ["street_name", "4th"], ["city", "Providence"], ["state", "RI"], ["postal_code", "02905"], ["created_at", "2024-10-11 20:34:59.039685"], ["updated_at", "2024-10-11 20:34:59.039685"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "4"], ["street_name", "Knutson"], ["city", "Bridgeport"], ["state", "CT"], ["postal_code", "06606"], ["created_at", "2024-10-11 20:34:59.040697"], ["updated_at", "2024-10-11 20:34:59.040697"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "89244"], ["street_name", "Eggendart"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10175"], ["created_at", "2024-10-11 20:34:59.041745"], ["updated_at", "2024-10-11 20:34:59.041745"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "75553"], ["street_name", "Mccormick"], ["city", "Boston"], ["state", "MA"], ["postal_code", "02163"], ["created_at", "2024-10-11 20:34:59.042905"], ["updated_at", "2024-10-11 20:34:59.042905"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "7936"], ["street_name", "Mesta"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10110"], ["created_at", "2024-10-11 20:34:59.044510"], ["updated_at", "2024-10-11 20:34:59.044510"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "56278"], ["street_name", "Jenna"], ["city", "Waterbury"], ["state", "CT"], ["postal_code", "06721"], ["created_at", "2024-10-11 20:34:59.045681"], ["updated_at", "2024-10-11 20:34:59.045681"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "91"], ["street_name", "Crowley"], ["city", "Brooklyn"], ["state", "NY"], ["postal_code", "11254"], ["created_at", "2024-10-11 20:34:59.046689"], ["updated_at", "2024-10-11 20:34:59.046689"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "3636"], ["street_name", "Lake View"], ["city", "Buffalo"], ["state", "NY"], ["postal_code", "14220"], ["created_at", "2024-10-11 20:34:59.047875"], ["updated_at", "2024-10-11 20:34:59.047875"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "07"], ["street_name", "Ramsey"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10079"], ["created_at", "2024-10-11 20:34:59.048950"], ["updated_at", "2024-10-11 20:34:59.048950"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "38384"], ["street_name", "West"], ["city", "Mount Vernon"], ["state", "NY"], ["postal_code", "10557"], ["created_at", "2024-10-11 20:34:59.050009"], ["updated_at", "2024-10-11 20:34:59.050009"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "8277"], ["street_name", "Bobwhite"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10099"], ["created_at", "2024-10-11 20:34:59.050934"], ["updated_at", "2024-10-11 20:34:59.050934"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "126"], ["street_name", "Gerald"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10115"], ["created_at", "2024-10-11 20:34:59.051921"], ["updated_at", "2024-10-11 20:34:59.051921"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "03867"], ["street_name", "Florence"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10029"], ["created_at", "2024-10-11 20:34:59.053297"], ["updated_at", "2024-10-11 20:34:59.053297"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "8"], ["street_name", "Riverside"], ["city", "Waterbury"], ["state", "CT"], ["postal_code", "06721"], ["created_at", "2024-10-11 20:34:59.054560"], ["updated_at", "2024-10-11 20:34:59.054560"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "578"], ["street_name", "Fallview"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10165"], ["created_at", "2024-10-11 20:34:59.055570"], ["updated_at", "2024-10-11 20:34:59.055570"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "73"], ["street_name", "Atwood"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10115"], ["created_at", "2024-10-11 20:34:59.056500"], ["updated_at", "2024-10-11 20:34:59.056500"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "5"], ["street_name", "Paget"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14646"], ["created_at", "2024-10-11 20:34:59.057445"], ["updated_at", "2024-10-11 20:34:59.057445"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "37"], ["street_name", "Kropf"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14646"], ["created_at", "2024-10-11 20:34:59.058435"], ["updated_at", "2024-10-11 20:34:59.058435"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "34"], ["street_name", "David"], ["city", "Boston"], ["state", "MA"], ["postal_code", "02104"], ["created_at", "2024-10-11 20:34:59.059500"], ["updated_at", "2024-10-11 20:34:59.059500"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "49"], ["street_name", "Oak"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10045"], ["created_at", "2024-10-11 20:34:59.060560"], ["updated_at", "2024-10-11 20:34:59.060560"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "34"], ["street_name", "Clarendon"], ["city", "Buffalo"], ["state", "NY"], ["postal_code", "14210"], ["created_at", "2024-10-11 20:34:59.061646"], ["updated_at", "2024-10-11 20:34:59.061646"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "33746"], ["street_name", "Sundown"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10045"], ["created_at", "2024-10-11 20:34:59.062672"], ["updated_at", "2024-10-11 20:34:59.062672"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "3944"], ["street_name", "Sullivan"], ["city", "Providence"], ["state", "RI"], ["postal_code", "02912"], ["created_at", "2024-10-11 20:34:59.064164"], ["updated_at", "2024-10-11 20:34:59.064164"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "391"], ["street_name", "South"], ["city", "Brooklyn"], ["state", "NY"], ["postal_code", "11225"], ["created_at", "2024-10-11 20:34:59.065501"], ["updated_at", "2024-10-11 20:34:59.065501"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "46703"], ["street_name", "Meadow Ridge"], ["city", "New Haven"], ["state", "CT"], ["postal_code", "06505"], ["created_at", "2024-10-11 20:34:59.066746"], ["updated_at", "2024-10-11 20:34:59.066746"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "824"], ["street_name", "Vermont"], ["city", "Buffalo"], ["state", "NY"], ["postal_code", "14210"], ["created_at", "2024-10-11 20:34:59.068137"], ["updated_at", "2024-10-11 20:34:59.068137"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "407"], ["street_name", "Granby"], ["city", "Bridgeport"], ["state", "CT"], ["postal_code", "06606"], ["created_at", "2024-10-11 20:34:59.069438"], ["updated_at", "2024-10-11 20:34:59.069438"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "9026"], ["street_name", "Fallview"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10280"], ["created_at", "2024-10-11 20:34:59.070767"], ["updated_at", "2024-10-11 20:34:59.070767"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "111"], ["street_name", "Oak Valley"], ["city", "Brooklyn"], ["state", "NY"], ["postal_code", "11236"], ["created_at", "2024-10-11 20:34:59.072222"], ["updated_at", "2024-10-11 20:34:59.072222"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "816"], ["street_name", "Meadow Ridge"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14604"], ["created_at", "2024-10-11 20:34:59.073572"], ["updated_at", "2024-10-11 20:34:59.073572"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "409"], ["street_name", "Jana"], ["city", "Albany"], ["state", "NY"], ["postal_code", "12205"], ["created_at", "2024-10-11 20:34:59.074763"], ["updated_at", "2024-10-11 20:34:59.074763"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "3609"], ["street_name", "Hudson"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14614"], ["created_at", "2024-10-11 20:34:59.075994"], ["updated_at", "2024-10-11 20:34:59.075994"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "469"], ["street_name", "Manley"], ["city", "Boston"], ["state", "MA"], ["postal_code", "02203"], ["created_at", "2024-10-11 20:34:59.077144"], ["updated_at", "2024-10-11 20:34:59.077144"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "48"], ["street_name", "Lindbergh"], ["city", "Brooklyn"], ["state", "NY"], ["postal_code", "11225"], ["created_at", "2024-10-11 20:34:59.078191"], ["updated_at", "2024-10-11 20:34:59.078191"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "2798"], ["street_name", "Burning Wood"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14604"], ["created_at", "2024-10-11 20:34:59.079178"], ["updated_at", "2024-10-11 20:34:59.079178"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "17685"], ["street_name", "Nevada"], ["city", "Elizabeth"], ["state", "NJ"], ["postal_code", "07208"], ["created_at", "2024-10-11 20:34:59.080095"], ["updated_at", "2024-10-11 20:34:59.080095"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "52"], ["street_name", "Coolidge"], ["city", "Albany"], ["state", "NY"], ["postal_code", "12247"], ["created_at", "2024-10-11 20:34:59.081101"], ["updated_at", "2024-10-11 20:34:59.081101"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "52687"], ["street_name", "Summer Ridge"], ["city", "Brooklyn"], ["state", "NY"], ["postal_code", "11247"], ["created_at", "2024-10-11 20:34:59.082200"], ["updated_at", "2024-10-11 20:34:59.082200"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "4"], ["street_name", "Reinke"], ["city", "Worcester"], ["state", "MA"], ["postal_code", "01605"], ["created_at", "2024-10-11 20:34:59.083462"], ["updated_at", "2024-10-11 20:34:59.083462"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "0"], ["street_name", "Washington"], ["city", "Providence"], ["state", "RI"], ["postal_code", "02912"], ["created_at", "2024-10-11 20:34:59.084870"], ["updated_at", "2024-10-11 20:34:59.084870"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "539"], ["street_name", "Gale"], ["city", "Elizabeth"], ["state", "NJ"], ["postal_code", "07208"], ["created_at", "2024-10-11 20:34:59.086167"], ["updated_at", "2024-10-11 20:34:59.086167"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "75"], ["street_name", "Holmberg"], ["city", "White Plains"], ["state", "NY"], ["postal_code", "10606"], ["created_at", "2024-10-11 20:34:59.087299"], ["updated_at", "2024-10-11 20:34:59.087299"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "9318"], ["street_name", "Dennis"], ["city", "Paterson"], ["state", "NJ"], ["postal_code", "07544"], ["created_at", "2024-10-11 20:34:59.088358"], ["updated_at", "2024-10-11 20:34:59.088358"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "7"], ["street_name", "Hoepker"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10019"], ["created_at", "2024-10-11 20:34:59.089295"], ["updated_at", "2024-10-11 20:34:59.089295"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "6819"], ["street_name", "Northfield"], ["city", "Springfield"], ["state", "MA"], ["postal_code", "01152"], ["created_at", "2024-10-11 20:34:59.090260"], ["updated_at", "2024-10-11 20:34:59.090260"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "2"], ["street_name", "Jenifer"], ["city", "Hartford"], ["state", "CT"], ["postal_code", "06160"], ["created_at", "2024-10-11 20:34:59.091236"], ["updated_at", "2024-10-11 20:34:59.091236"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "45006"], ["street_name", "Bay"], ["city", "Waltham"], ["state", "MA"], ["postal_code", "02453"], ["created_at", "2024-10-11 20:34:59.092410"], ["updated_at", "2024-10-11 20:34:59.092410"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "977"], ["street_name", "Heffernan"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10125"], ["created_at", "2024-10-11 20:34:59.093668"], ["updated_at", "2024-10-11 20:34:59.093668"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "640"], ["street_name", "Rowland"], ["city", "Hartford"], ["state", "CT"], ["postal_code", "06140"], ["created_at", "2024-10-11 20:34:59.094819"], ["updated_at", "2024-10-11 20:34:59.094819"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "3061"], ["street_name", "Mayer"], ["city", "Schenectady"], ["state", "NY"], ["postal_code", "12305"], ["created_at", "2024-10-11 20:34:59.095888"], ["updated_at", "2024-10-11 20:34:59.095888"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "7708"], ["street_name", "Acker"], ["city", "Albany"], ["state", "NY"], ["postal_code", "12205"], ["created_at", "2024-10-11 20:34:59.096933"], ["updated_at", "2024-10-11 20:34:59.096933"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "597"], ["street_name", "David"], ["city", "Springfield"], ["state", "MA"], ["postal_code", "01129"], ["created_at", "2024-10-11 20:34:59.097897"], ["updated_at", "2024-10-11 20:34:59.097897"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "78554"], ["street_name", "Del Sol"], ["city", "Albany"], ["state", "NY"], ["postal_code", "12232"], ["created_at", "2024-10-11 20:34:59.098868"], ["updated_at", "2024-10-11 20:34:59.098868"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "32"], ["street_name", "Mayer"], ["city", "Newark"], ["state", "NJ"], ["postal_code", "07188"], ["created_at", "2024-10-11 20:34:59.099895"], ["updated_at", "2024-10-11 20:34:59.099895"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "958"], ["street_name", "Drewry"], ["city", "Rochester"], ["state", "NY"], ["postal_code", "14639"], ["created_at", "2024-10-11 20:34:59.101165"], ["updated_at", "2024-10-11 20:34:59.101165"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "79"], ["street_name", "Dottie"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10079"], ["created_at", "2024-10-11 20:34:59.102859"], ["updated_at", "2024-10-11 20:34:59.102859"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "57"], ["street_name", "Carioca"], ["city", "Fairfield"], ["state", "CT"], ["postal_code", "06825"], ["created_at", "2024-10-11 20:34:59.104507"], ["updated_at", "2024-10-11 20:34:59.104507"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "7"], ["street_name", "Weeping Birch"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10034"], ["created_at", "2024-10-11 20:34:59.105807"], ["updated_at", "2024-10-11 20:34:59.105807"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "27"], ["street_name", "Burning Wood"], ["city", "Flushing"], ["state", "NY"], ["postal_code", "11355"], ["created_at", "2024-10-11 20:34:59.106872"], ["updated_at", "2024-10-11 20:34:59.106872"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "5580"], ["street_name", "Ramsey"], ["city", "Hicksville"], ["state", "NY"], ["postal_code", "11854"], ["created_at", "2024-10-11 20:34:59.108044"], ["updated_at", "2024-10-11 20:34:59.108044"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "1"], ["street_name", "Northridge"], ["city", "New Haven"], ["state", "CT"], ["postal_code", "06510"], ["created_at", "2024-10-11 20:34:59.111862"], ["updated_at", "2024-10-11 20:34:59.111862"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "12586"], ["street_name", "Cody"], ["city", "Newark"], ["state", "NJ"], ["postal_code", "07188"], ["created_at", "2024-10-11 20:34:59.112971"], ["updated_at", "2024-10-11 20:34:59.112971"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "606"], ["street_name", "West"], ["city", "Stamford"], ["state", "CT"], ["postal_code", "06912"], ["created_at", "2024-10-11 20:34:59.114231"], ["updated_at", "2024-10-11 20:34:59.114231"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "3363"], ["street_name", "Sachtjen"], ["city", "Trenton"], ["state", "NJ"], ["postal_code", "08650"], ["created_at", "2024-10-11 20:34:59.115323"], ["updated_at", "2024-10-11 20:34:59.115323"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "044"], ["street_name", "Blue Bill Park"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10270"], ["created_at", "2024-10-11 20:34:59.116329"], ["updated_at", "2024-10-11 20:34:59.116329"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "694"], ["street_name", "Dorton"], ["city", "Worcester"], ["state", "MA"], ["postal_code", "01610"], ["created_at", "2024-10-11 20:34:59.117329"], ["updated_at", "2024-10-11 20:34:59.117329"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "18"], ["street_name", "Talisman"], ["city", "Bronx"], ["state", "NY"], ["postal_code", "10469"], ["created_at", "2024-10-11 20:34:59.118281"], ["updated_at", "2024-10-11 20:34:59.118281"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "599"], ["street_name", "Springview"], ["city", "Brooklyn"], ["state", "NY"], ["postal_code", "11215"], ["created_at", "2024-10-11 20:34:59.119259"], ["updated_at", "2024-10-11 20:34:59.119259"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "45"], ["street_name", "Fairfield"], ["city", "Albany"], ["state", "NY"], ["postal_code", "12247"], ["created_at", "2024-10-11 20:34:59.120174"], ["updated_at", "2024-10-11 20:34:59.120174"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "4036"], ["street_name", "Bultman"], ["city", "Mount Vernon"], ["state", "NY"], ["postal_code", "10557"], ["created_at", "2024-10-11 20:34:59.121077"], ["updated_at", "2024-10-11 20:34:59.121077"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "9661"], ["street_name", "Swallow"], ["city", "Jamaica"], ["state", "NY"], ["postal_code", "11470"], ["created_at", "2024-10-11 20:34:59.122163"], ["updated_at", "2024-10-11 20:34:59.122163"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "49702"], ["street_name", "Thierer"], ["city", "Stamford"], ["state", "CT"], ["postal_code", "06905"], ["created_at", "2024-10-11 20:34:59.123439"], ["updated_at", "2024-10-11 20:34:59.123439"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "62108"], ["street_name", "Esker"], ["city", "Waterbury"], ["state", "CT"], ["postal_code", "06705"], ["created_at", "2024-10-11 20:34:59.124779"], ["updated_at", "2024-10-11 20:34:59.124779"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "62205"], ["street_name", "Clove"], ["city", "New York City"], ["state", "NY"], ["postal_code", "10014"], ["created_at", "2024-10-11 20:34:59.125914"], ["updated_at", "2024-10-11 20:34:59.125914"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.2ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "69689"], ["street_name", "Oriole"], ["city", "Boston"], ["state", "MA"], ["postal_code", "02109"], ["created_at", "2024-10-11 20:34:59.126942"], ["updated_at", "2024-10-11 20:34:59.126942"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "undecided"], ["street_number", "16"], ["street_name", "Bowman"], ["city", "Jamaica"], ["state", "NY"], ["postal_code", "11431"], ["created_at", "2024-10-11 20:34:59.128008"], ["updated_at", "2024-10-11 20:34:59.128008"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mVoter Create (0.1ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "81"], ["street_name", "Nobel"], ["city", "Boston"], ["state", "MA"], ["postal_code", "02124"], ["created_at", "2024-10-11 20:34:59.128919"], ["updated_at", "2024-10-11 20:34:59.128919"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+Started GET "/api/voters" for 127.0.0.1 at 2024-10-11 16:35:05 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.6ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (106.31ms)
+Completed 200 OK in 124ms (Views: 122.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/voters" for 127.0.0.1 at 2024-10-11 16:36:19 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (4.6ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (65.36ms)
+Completed 200 OK in 93ms (Views: 88.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/voters" for 127.0.0.1 at 2024-10-11 16:37:01 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.6ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (75.71ms)
+Completed 200 OK in 88ms (Views: 86.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/voters" for 127.0.0.1 at 2024-10-11 16:37:14 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.7ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (46.45ms)
+Completed 200 OK in 55ms (Views: 54.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/voters" for 127.0.0.1 at 2024-10-11 16:37:26 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.7ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.0ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/voters" for 127.0.0.1 at 2024-10-11 16:39:04 -0400
+Processing by Api::VotersController#index as HTML
+  [1m[36mVoter Load (0.8ms)[0m  [1m[34mSELECT "voters".* FROM "voters"[0m
+  ↳ app/controllers/api/voters_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (62.12ms)
+Completed 200 OK in 82ms (Views: 81.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/voters" for 127.0.0.1 at 2024-10-11 16:40:14 -0400
+Processing by Api::VotersController#create as */*
+  Parameters: {"voter"=>{"geocode"=>"42.96526,-71.49519", "street_number"=>"24", "street_name"=>"Servant", "city"=>"Bedford", "state"=>"NH", "postal_code"=>"03110", "vote_preference"=>"support", "address_string"=>"24 Servant, Bedford, NH 03110"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[36mVoter Create (0.3ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "geocode", "address_string", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vote_preference", "support"], ["street_number", "24"], ["street_name", "Servant"], ["city", "Bedford"], ["state", "NH"], ["postal_code", "03110"], ["geocode", "42.96526,-71.49519"], ["address_string", "24 Servant, Bedford, NH 03110"], ["created_at", "2024-10-11 20:40:14.981676"], ["updated_at", "2024-10-11 20:40:14.981676"]]
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+[active_model_serializers] Rendered VoterSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/voters" for 127.0.0.1 at 2024-10-11 16:40:37 -0400
+Processing by Api::VotersController#create as */*
+  Parameters: {"voter"=>{"geocode"=>"44.7295903,-63.6534103", "street_number"=>"121", "street_name"=>"main", "city"=>"bedford", "state"=>"nh", "postal_code"=>"", "vote_preference"=>"oppose", "address_string"=>"121 main, bedford, nh "}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[36mVoter Create (0.4ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "geocode", "address_string", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "121"], ["street_name", "main"], ["city", "bedford"], ["state", "nh"], ["postal_code", ""], ["geocode", "44.7295903,-63.6534103"], ["address_string", "121 main, bedford, nh "], ["created_at", "2024-10-11 20:40:37.912185"], ["updated_at", "2024-10-11 20:40:37.912185"]]
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+[active_model_serializers] Rendered VoterSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/voters" for 127.0.0.1 at 2024-10-11 16:41:08 -0400
+Processing by Api::VotersController#create as */*
+  Parameters: {"voter"=>{"geocode"=>"42.9657599,-71.4930593", "street_number"=>"14", "street_name"=>"Servant", "city"=>"Bedford", "state"=>"NH", "postal_code"=>"03110", "vote_preference"=>"oppose", "address_string"=>"14 Servant, Bedford, NH 03110"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[36mVoter Create (0.4ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "geocode", "address_string", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "14"], ["street_name", "Servant"], ["city", "Bedford"], ["state", "NH"], ["postal_code", "03110"], ["geocode", "42.9657599,-71.4930593"], ["address_string", "14 Servant, Bedford, NH 03110"], ["created_at", "2024-10-11 20:41:08.518187"], ["updated_at", "2024-10-11 20:41:08.518187"]]
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+[active_model_serializers] Rendered VoterSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/voters" for 127.0.0.1 at 2024-10-11 16:41:37 -0400
+Processing by Api::VotersController#create as */*
+  Parameters: {"voter"=>{"geocode"=>"42.43923,-71.04424", "street_number"=>"88", "street_name"=>"Rockingham Ave", "city"=>"Malden", "state"=>"MA", "postal_code"=>"02148", "vote_preference"=>"oppose", "address_string"=>"88 Rockingham Ave, Malden, MA 02148"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[36mVoter Create (0.4ms)[0m  [1m[32mINSERT INTO "voters" ("vote_preference", "street_number", "street_name", "city", "state", "postal_code", "geocode", "address_string", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["vote_preference", "oppose"], ["street_number", "88"], ["street_name", "Rockingham Ave"], ["city", "Malden"], ["state", "MA"], ["postal_code", "02148"], ["geocode", "42.43923,-71.04424"], ["address_string", "88 Rockingham Ave, Malden, MA 02148"], ["created_at", "2024-10-11 20:41:37.728144"], ["updated_at", "2024-10-11 20:41:37.728144"]]
+  ↳ app/controllers/api/voters_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/voters_controller.rb:30
+[active_model_serializers] Rendered VoterSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mVoter Load (0.4ms)[0m  [1m[34mSELECT  "voters".* FROM "voters" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "voters"[0m
