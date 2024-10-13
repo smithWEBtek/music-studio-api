@@ -6,10 +6,10 @@ default: &default
   password: pointer
 development:
   <<: *default
-  database: voter-preference-app_development
+  database: music-studio-api_development
 test:
   <<: *default
-  database: voter-preference-app_test
+  database: music-studio-api_test
 production:
   <<: *default
-  database: voter-preference-app_production
+  database: music-studio-api_production
