@@ -1,122 +1,172 @@
-## Summary
-This app provides a live clickable map for voters to indicate their voting preference. The user can either enter their address in a form and have it geocoded to the map, or vice-versa, they can click on the map to populate the address form. 
+## Music Studio app
 
-Once the form is completed, the user can choose from 3 options:  Support, Oppose or Undecided.
+2017-10-02
 
-The voter preference will then be stored in the database, with an appropriate map marker colored by their choice: 
-Yellow  = Undecided
-Red = Oppose
-Green = Support
+Brad Smith
 
-A live reloading D3 bar chart represents the current counts of the 3 voter preference groups.
+brad@smithwebtek.com
 
-## Configuration and Setup
-* Ruby version: 2.7.1
+www.smithWEBtek.com
 
-* System dependencies: Gemfile contains required dependencies. 
+### The application was built with Rails 5.0 in API mode.
 
-* Configuration: 
-	- This is a Rails app in API mode, to provide data for the Voter Preference app.
+### The React app at app/client was created with [**create-react-app**](https://github.com/facebook/create-react-app)
 
-* Database creation:
-	- Postgresql requires database creation, which is included in a custom rake tasks below.
+You can navigate to the /client folder to interact with the React app on its own.
 
-* Database initialization:
-	- To create the database, migrate the tables, seed the database and start your local Rails server, please run: 
-	`$ rake db:dcms`
-	- see this task here: `app/lib/tasks/dcms.rake`
+To see the React app, navigate to /client folder and run:
 
-	- To do the same steps after deployment to Heroku, please run: 
-	`$ rake db:hdcms` 
-	- see this task here: `app/lib/tasks/hdcms.rake`
+$ npm install
 
-* How to run the test suite
-	- Currently there is not a test suite
+$ npm start
 
-* Services (job queues, cache servers, search engines, etc.)
+### Foreman gem
 
-* Deployment instructions
-	- The app is comprised of 2 github repositories, 1 for the client, and 1 for the api.
+The gem 'foreman' was used to implement the React client app within the same project, using [this blog post](https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with-your-rails-api/) as a guide.
 
-	[CLIENT](https://github.com/smithWEBtek/voter-preference-client)
+### Postgresql is the database required
 
-	[API](https://github.com/smithWEBtek/voter-preference-api)
+You need Postgresql installed and running on your machine for this to work.
 
+## START
 
+The project loads all in one repo, with the front-end client using React/Redux in the /app/client folder. To start the app:
 
-## Setup notes
-- `index.html` has required dependencies in CDN link tags
+1.  Fork and Clone this repo
 
-- the Leaflet JavaScript library is included as physical files in the directory structure, (but could also be a CDN link if preferred).
+2.  cd into piano-student-api/app/client directory
 
-- `index.html` has script tag link to `map.js`
+3.  run:$ npm install
 
-- the files `composer.json` and `index.php` are present for ease of deployment to Heroku, otherwise these 2 files have no functional effect on the app.
+4.  cd into music-studio (root) directory
 
-- `Bulma` is used as a css library for ease of quick deployment, with a responsive, clean layout
+5.  run:$ bundle install (installs all the gems listed in the gemfile)
 
-- `map.css` has any custom css that is required
+6.  run:$ rake db:setup (creates the Postgresql database)
 
-- Here.com is used for geocoding and reverse geocoding
+                              (note, you must have Postgres running, or this won't work)
 
-- D3 is used for live data visualization
+7.  run:$ rake db:dcms (this will drop, create, migrate, seed database and start the app)
 
-## Display
-The `index.html` page has 4 areas:
-1. `nav bar`
-2. `map div`
-3. `voter preference form` 
-4. `D3 data visualization bar chart`
+#### Next, to start the Rails API && the client React app together:
 
+run:$ rake start:start
 
-## Voter Interaction Flow
-1. The `app response div`, shows Voter prompts & app responses
+### you should see JSON data here: http://127.0.0.1:3001/
 
-2. The map is centered on Boston geocode with zoom level 12
-`([42.358056, -71.063611], 12)`
+### Troubleshooting
 
-3. The `confirm address` button is grayed out, non-functional until the form contains a validated street address.
+NOTE there are 4 addresses(with ports), currently specified in:
 
-4. The `voter preference form` is grayed out and not functional until an API validated, Voter-accepted address appears in the `address form`, (which activates the `voter preference form` (step #7).
+     app/config/initializers/cors
 
-5. The Voter is prompted with 2 options for address validation with a default message in the `app response div`
-	
-	OPTION 1: ENTER ADDRESS in `address form`
-	- The address is auto-completed as the Voter types, using an API call to the `here.com` api.
-	- Voter chooses correct address from API responses, or 
-	- Voter continues editing the `address form` until the api returns a valid address.
-	- Voter clicks `confirm address` button.
-	- Valided address appears in the `address validation div`.
+```ruby
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins 'localhost:3000', '127.0.0.1:3000', 'localhost:5000', '127.0.0.1:5000'
 
-	OPTION 2: MAP-ZOOM-CLICK on address location
+    resource '*',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+end
+```
 
-	- Voter clicks map and coordinates are captured by JavaScript.
-	- An API call is made to HERE.com to find a street address that is closest to, and within 150 meters of, the "Voter-clicked" location coordinates.
-	- The Voter accepts the returned street address by clicking `Confirm Address` button.
-	- The Voter rejects the returned address and is prompted to ENTER ADDRESS or MAP-ZOOM-CLICK on location
-	- Voter clicks `confirm address` button.
-	- Required section of the address form turns GREEN
-	
+Play around with these if you need to troubleshoot CORS errors, when the Rails API thinks you are an enemy.
 
-6. When a valid address appears in the  `address validation div`:
-	- A JavaScript class Object of `Voter` is instantiated with the validated address and geocode information.
-	- The `voter preference form` is activated and javascript starts listening for the `Submit Preference` button click
+There are 2 'procfile's at the root of the Rails app, where you can control how the app starts on Heroku, or how it starts locally, for development.
 
-7. Voter Submit Preference
-	- Voter clicks radio button in `voter preference form`
-	- support / opppose / undecided
+Also, within the app/client/src/store/services folder, there are 5 files that are the point of interaction between the React app and the API, whether on Heroku or local.
 
-8. The Voter Object is updated with the chosen preference and saved to the PostgreSQL database.
+```bash
+    └── services
+        ├── LessonResourceService.js
+        ├── LessonService.js
+        ├── ResourceService.js
+        ├── StudentService.js
+        └── TeacherService.js
+```
 
-9. The map is updated with a colored map point icon based on the Voter's preference
-	- Green = Support
-	- Red = Oppose
-	- Yellow = Undecided
+At the top of each of these files is the following variable for accessing API data either locally or on Heroku:
 
-## Views
-	
-- The app includes 3 views including Boston, New England and US national view.
+```javascript
+const API_URL =
+  process.env.REACT_APP_API_URL || 'https://music-studio.herokuapp.com/api'
+```
 
-- The map displays the entire voter database table, with markers colored by the preference of each individual voter
+This API_URL is how the app talks to your API, whether local or on Heroku.
 
-- A D3 bar graph shows a visual representation of the data
+Play around with these too, if you are troubleshooting issues with accessing data.
+
+Verify that API is serving data on 127.0.0.1:3001
+
+If not, also try localhost:3001 if you don't see JSON data almost immediately.
+
+NOTE. the Rails app/config/routes.rb file is configured to default home to /api/students
+
+So, you will see the students json data by default at http://127.0.0.1:3001/
+
+If Rails seems to be running ok,
+
+and you have Postgresql installed and running
+
+and you followed the steps above to create, migrate, seed the database,
+
+you should see data.
+
+## SEED DATA and related RAKE tasks
+
+There is a seeds.rb file in app/db/seeds.rb with sample data.
+There are 3 rake tasks that incorporate this seed data:
+
+1.  rake db:backup
+
+    creates a "time stamp" named: backup<time as number>.rb
+
+    located in /app/db/data
+
+2.  rake db:dcms
+
+    this will: D DROP database, C CREATE database, M run MIGRATIONS, S load SEED data
+
+## API and interacting with the Rails app 'back-end'
+
+The backend data (in JSON format) (assuming port 3001) can be seen at :
+
+       127.0.0.1:3001/api/students
+
+       127.0.0.1:3001/api/teachers
+
+       127.0.0.1:3001/api/resources
+
+       127.0.0.1:3001/api/lessons
+
+       127.0.0.1:3001/api/lesson_resources
+
+### NOTES:
+
+1.  Deleting a Teacher or Student, does not delete them from the database.
+
+    It updates the record to {active: false}, which appears as green/red active/inactive at:
+
+    /students
+
+    /teachers
+
+2.  You can add a new Resource to the database, without adding a URL
+
+    By default, Resources without URL's will have a greyed out show button 'empty' on the Resources list at:
+
+    /resources
+
+    also when viewing a Lesson, there is a section showing all resources (for adding quickly to a Lesson):
+
+    This resources list is the same React component, simply returning JSX for a passed in list of Resources
+
+3.  All of the 4 major data groups (Students, Teachers, Resources, Lessons) are in one folder for each respectively. It was easier to navigate the varous files, by having them grouped this way.
+
+The project requires a numer of containers and a number of stateless functional presentational components.
+
+This image shows the folder structure with green highlighting the "container" components, and yellow highlight the 'stateless' components:
+
+![](http://res.cloudinary.com/smithwebtek/image/upload/v1516839958/music-studio/container-component-list.png)
